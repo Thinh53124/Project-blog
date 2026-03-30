@@ -12,3 +12,6 @@ link icon linkedin
 
 <i class="fa-solid fa-microchip"></i>
 link icon header
+
+<i class="fa-solid fa-magnifying-glass"></i>
+link icon search trong header
