@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    font-family: Arial;
+    background-image: url("./register.png");
+    background-size: cover;
+}
+
+.register-left h1 {
+    color: white;
+    font-size: 40px;
+}
+
+.register-left p {
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.register-right {
+    background: #ccc;
+    padding: 20px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+h1{
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+.register-name{
+    width: 80px;
+}
+
+input {
+    width: 400px;
+    margin: 5px 0;
+    padding: 8px;
+}
+
+span {
+    font-size: 12px;
+}
+
+.card {
+    margin-left: 450px;
+    width: 492px;
+    height: 554px;
+    border-radius: 4px;
+    border-width: 1px;
+    padding: 75px;
+    background-color: rgba(236, 234, 234, 0.9);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form-group span {
+    font-size: 16px;
+    color: black;
+    margin-top: 3px;
+    gap: 5px;
+}
+
+input {
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.register-name {
+    display: flex;
+    gap: 58px;
+}
+
+.name {
+    width: 170px;
+}
+
+.btn-signup {
+    margin-top: 10px;
+    padding: 15px;
+    border: none;
+    background-color: #0D6EFD;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.btn-signup:hover {
+    background-color: #0D6EFD;
+}
+
+.confirm-link{
+    color: red;
+}
