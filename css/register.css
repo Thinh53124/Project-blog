@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: url("../image/background-register.png") no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+header h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+ 
+header h4 {
+    font-weight: 100;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 8%;
+}
+
+header {
+    color: white;
+    max-width: 700px;
+    text-align: center;
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+form {
+    width: 400px;
+    padding: 30px;
+    background: #FFFFFFE5;
+    border-radius: 8px;
+}
+form span {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+button {
+    width: 70px;
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    background: rgb(13, 110, 253);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+form p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+form a {
+    display: block;
+    color: red;
+    margin-top: 6px;
+    margin-left: 8px;
+}
+.name{
+    display: flex;
+    gap: 20px;
+}
+.name input{
+    width: 160px;
+}

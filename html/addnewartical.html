@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/addnewartical.css">
+    <title>Add New Article</title>
+</head>
+<body>
+
+    <button class="close-btn"><i class="fa-regular fa-circle-xmark"></i></button>
+
+    <div class="form-wrapper">
+
+        <h2>📝 Add New Article</h2>
+
+        <label>Title:</label>
+        <input type="text" placeholder="">
+
+        <label>Article Categories:</label>
+        <select>
+            <option value="Daily Journal">Daily Journal</option>
+            <option>Work & Career</option> 
+            <option>Personal Thoughts</option>
+            <option>Emotions & Feelings</option>
+        </select>
+
+        <label>Mood:</label>
+        <select>
+            <option>😃 Happy</option>
+            <option>😢 Sad</option>
+            <option>😠 Angry</option>
+            <option>😴 Tired</option>
+            <option>😎 Confident</option>
+        </select>
+
+        <label>Content:</label>
+        <textarea placeholder=""></textarea>
+
+        <div class="status-row">
+            <span>Status</span>
+            <label>
+                <input type="radio" name="status" value="public"> public
+            </label>
+            <label>
+                <input type="radio" name="status" value="private"> private
+            </label>
+        </div>
+
+        <div class="upload-box">
+            <img src="../image/Group.png" alt="">
+            <p>Browse and chose the files you want to upload from your computer</p>
+        </div>
+
+        <button class="btn-add">Add</button>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>User Management</title>
+    <link rel="stylesheet" href="../css/admin_customer.css"> 
+</head>
+<body>
+    <header>
+        <div class="header-right">
+            <div class="icon-badge">
+                <i class="fa-regular fa-envelope"></i>
+                <span class="badge">2</span>
+            </div>
+            <i class="fa-regular fa-bell"></i>
+            <div class="avt">
+                <img src="../image/avt_admin.png" alt="">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <aside class="interact">
+            <div class="menu-item active"><a href="#"><img src="../image/Users_Group.png" alt=""> Manage Users</a></div>
+            <div class="menu-item"><a href="#"><img src="../image/Book.svg" alt=""> Manage Entries</a></div>
+            <div class="menu-item"><a href="#"><img src="../image/Book_Open.svg" alt=""> Manage Article</a></div>
+            <div class="menu-item logout"><a href="../html/login.html"><img src="../image/Log_Out.svg" alt=""> Log out</a></div>
+        </aside>
+
+        <section class="content">
+            <div class="content-header">
+                <div class="members">
+                    <h2>Team members <span class="user-count">100 users</span></h2>
+                </div>
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search user">
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name <i class="fa-solid fa-arrow-down-a-z"></i></th>
+                            <th>Status <i class="fa-solid fa-arrow-down"></i></th>
+                            <th>Email address</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <img src="../image/olivia.png" alt="avatar">
+                                    <div>
+                                        <div class="name">Olivia Rhye</div>
+                                        <div class="username">@olivia</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status">hoạt động</span></td>
+                            <td class="email">olivia@untitledui.com</td>
+                            <td class="actions">
+                                <button class="btn-block">block</button>
+                                <button class="btn-unblock">unblock</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <img src="../image/phoenix.png" alt="avatar">
+                                    <div>
+                                        <div class="name">Phoenix Baker</div>
+                                        <div class="username">@phoenix</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status">hoạt động</span></td>
+                            <td class="email">phoenix@untitledui.com</td>
+                            <td class="actions">
+                                <button class="btn-block">block</button>
+                                <button class="btn-unblock">unblock</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <img src="../image/lana.png" alt="avatar">
+                                    <div>
+                                        <div class="name">Lana Steiner</div>
+                                        <div class="username">@lana</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status">hoạt động</span></td>
+                            <td class="email">lana@untitledui.com</td>
+                            <td class="actions">
+                                <button class="btn-block">block</button>
+                                <button class="btn-unblock">unblock</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <img src="../image/demi.png" alt="avatar">
+                                    <div>
+                                        <div class="name">Demi Wilkinson</div>
+                                        <div class="username">@demi</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status">hoạt động</span></td>
+                            <td class="email">demi@untitledui.com</td>
+                            <td class="actions">
+                                <button class="btn-block">block</button>
+                                <button class="btn-unblock">unblock</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <img src="../image/candice.png" alt="avatar">
+                                    <div>
+                                        <div class="name">Candice wu</div>
+                                        <div class="username">@candice</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status">hoạt động</span></td>
+                            <td class="email">candice@untitledui.com</td>
+                            <td class="actions">
+                                <button class="btn-block">block</button>
+                                <button class="btn-unblock">unblock</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <img src="../image/natali.png" alt="avatar">
+                                    <div>
+                                        <div class="name">Natali Craig</div>
+                                        <div class="username">@natali</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status">hoạt động</span></td>
+                            <td class="email">natali@untitledui.com</td>
+                            <td class="actions">
+                                <button class="btn-block">block</button>
+                                <button class="btn-unblock">unblock</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <img src="../image/drew.png" alt="avatar">
+                                    <div>
+                                        <div class="name">Drew Cano</div>
+                                        <div class="username">@drew</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status">hoạt động</span></td>
+                            <td class="email">drew@untitledui.com</td>
+                            <td class="actions">
+                                <button class="btn-block">block</button>
+                                <button class="btn-unblock">unblock</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <img src="../image/orlando.png" alt="avatar">
+                                    <div>
+                                        <div class="name">Orlando Diggs</div>
+                                        <div class="username">@orlando</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status">hoạt động</span></td>
+                            <td class="email">orlando@untitledui.com</td>
+                            <td class="actions">
+                                <button class="btn-block">block</button>
+                                <button class="btn-unblock">unblock</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <img src="../image/andi.png" alt="avatar">
+                                    <div>
+                                        <div class="name">Andi Lane</div>
+                                        <div class="username">@andi</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status">hoạt động</span></td>
+                            <td class="email">andi@untitledui.com</td>
+                            <td class="actions">
+                                <button class="btn-block">block</button>
+                                <button class="btn-unblock">unblock</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <img src="../image/kate.png" alt="avatar">
+                                    <div>
+                                        <div class="name">Kate Morrison</div>
+                                        <div class="username">@kate</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status">hoạt động</span></td>
+                            <td class="email">kate@untitledui.com</td>
+                            <td class="actions">
+                                <button class="btn-block">block</button>
+                                <button class="btn-unblock">unblock</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <footer class="pages">
+                <button class="btn-page"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+                <div class="number">
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <span>...</span>
+                    <button>8</button>
+                    <button>9</button>
+                    <button>10</button>
+                </div>
+                <button class="btn-page">Next <i class="fa-solid fa-arrow-right"></i></button>
+            </footer>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin_entries.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-right">
+            <div class="icon-badge">
+                <i class="fa-regular fa-envelope"></i>
+                <span class="badge">2</span>
+            </div>
+            <i class="fa-regular fa-bell"></i>
+            <div class="avt">
+                <img src="../image/avt_admin.png" alt="">
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <aside class="interact">
+            <div class="menu-item"><a href="#"><img src="../image/Users_Group.png" alt=""> Manage Users</a></div>
+            <div class="menu-item active"><a href="#"><img src="../image/Book.svg" alt=""> Manage Entries</a></div>
+            <div class="menu-item"><a href="#"><img src="../image/Book_Open.svg" alt=""> Manage Article</a></div>
+            <div class="menu-item logout"><a href="../html/login.html"><img src="../image/Log_Out.svg" alt=""> Log
+                    out</a></div>
+        </aside>
+
+        <section class="content">
+            <div class="content-header">
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search Article Categories">
+                </div>
+            </div>
+
+            <div class="manage-box">
+                <h2 class="box-title">📂 Manage Categories</h2>
+
+                <div class="form-group">
+                    <label>Category Name:</label>
+                    <input type="text" placeholder="Enter category name" class="input-category">
+                    <button class="btn-add">Add Category</button>
+                </div>
+
+                <h3 class="list-title">🗓️ Category List</h3>
+                <table class="category-table">
+                    <thead>
+                        <tr>
+                            <th class="col-id">#</th>
+                            <th class="col-name">Category Name</th>
+                            <th class="col-actions">Actions</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
