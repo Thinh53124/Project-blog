@@ -130,12 +130,19 @@
   margin: 10px 15px;
 }
 
+.post-card h3 svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 .post-card h3 {
   margin: 0 15px;
   font-size: 18px;
   display: flex;
-  align-items: center;
+  align-items: center; /* fix lệch dọc */
   gap: 8px;
+  line-height: 1.4;
 }
 
 .post-card .desc {
@@ -228,12 +235,24 @@
 }
 
 .add-new-article {
-  display: block;
-  text-align: center;
-  margin: 20px 0;
-  font-family: 'Inter';
-  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  padding: 15px 0;
+  width: 100%;
+  border: #0D6EFD;
+  background: transparent;
+  cursor: pointer;
+}
+
+.add-new-article h1 {
+  font-size: 30px;
   color: #0D6EFD;
-  text-decoration: none;
   font-weight: 600;
+  margin: 0;
+}
+
+.add-new-article a {
+  text-decoration: none;
 }
