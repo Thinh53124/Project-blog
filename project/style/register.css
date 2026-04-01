@@ -1,0 +1,109 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI',sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    font-family: Arial;
+
+    background-image: url("../img/register.png");
+    background-size: cover;
+}
+.register-left{
+    text-align: center;
+}
+.register-left h1 {
+    color: #E8EFFD;
+    font-size: 40px;
+    
+}
+
+.register-left p {
+    color: #BAD0F8;
+    font-size: 14px;
+    margin-top: 120px;
+}
+
+.register-right {
+    background: #FFFFFFE5;
+    padding: 50px;
+    width: 492px;
+    height: 554;
+    border-radius: 5px;
+}
+
+h1{
+    color: #212529;
+}
+
+p{
+    color: #212529;
+}
+
+.register-name{
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+
+
+
+span {
+    font-size: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    
+}
+
+.form-group span {
+    font-size: 16px;
+    color: #212529;
+    margin-top: 3px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 392px;
+    font-size: 20px;
+}
+
+.register-name input{
+    width: 170px;
+}
+
+.btn-sumbit {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #0D6EFD;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80px;
+    height: 38px;
+}
+
+.btn-signup:hover {
+    background-color: #0056b3;
+}
+.login-link{
+    color: black;
+    font-weight: 700;
+}
+.login-link a{
+    color: #DC3545;
+}

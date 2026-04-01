@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Article</title>
+    <link rel="stylesheet" href="../style/new.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <form class="form">
+
+            <h1 style="font-size: 24px; line-height: 100%; font-weight: 700;">📝 Add New Article</h1>
+            <br><br><br>
+
+            <!-- Title -->
+            <label>Title:</label><br><br>
+            <input type="text" class="title-input" placeholder="Enter your title..."><br><br>
+
+            <label>Article Categories:</label><br>
+            <input type="text" placeholder="Enter category"><br><br>
+
+            <label>Mood:</label><br>
+            <select>
+                <option>😊 Happy</option>
+                <option>😢 Sad</option>
+                <option>😎 Cool</option>
+            </select><br><br>
+
+            <label>Content:</label><br>
+            <textarea rows="8"></textarea>
+            <div class="form-status">
+                <span>Status</span> &nbsp;
+                
+                <input type="radio" id="public" name="Status" value="public">
+                <label for="public" >Public</label> &nbsp;
+                <input type="radio" id="private" name="Status" value="private">
+                <label for="private">Private</label>
+                
+                
+              </div><br>
+            <div class="input-file">
+                <input type="file" id="file-input">
+                <img src="../img/content.png" alt=""><br>
+                <label for="file-input">Browse and chose the files you want to upload from your computer</label>
+            </div>
+            
+
+            <button type="submit">Add</button>
+
+        </form>
+
+    </div>
+
+
+</body>
+</html>
+

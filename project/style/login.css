@@ -1,0 +1,136 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI',sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+}
+
+header input {
+    flex: 1; 
+    width: 432px;
+    padding: 10px;
+    margin: 20px;
+    height: 46px;
+}
+
+header button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+body {
+    padding: 0px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+.sign-in-with{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+    
+
+}
+.card{
+    min-height: calc(100vh - 50px);
+    padding:100px 100px 0 0;
+}
+
+.img-login{
+    padding:100px 0 0 100px;
+    margin: 0;
+    
+}
+img{
+    width: 600px;
+    height: 450px;
+}
+
+.login-form {
+    margin-top: 20px;
+    width: 434px;
+    height: 423px;
+}
+
+.login-form input {
+    width: 100%;
+    height: 46px;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: solid #CED4DA;
+}
+
+.login-form span {
+    font-size: 14px;
+    color: #212529;
+}
+
+.btn-submit {
+    border-radius: 5px;
+    width: 130.73px;
+    height: 48px;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: #0D6EFD;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 19.84px;
+}
+
+.btn-link {
+    border: none;
+    border-radius: 5px;
+    background-color: #0D6EFD;
+    text-align: center;
+
+    padding: 10px;
+    width: 36px;
+    cursor: pointer;
+}
+.btn-link a{
+        color: white;
+}
+.footer{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    background-color: #0D6EFD;
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer span{
+    margin: 13px;
+    margin-right: auto;
+}
+
+.footer a{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.register-link a{
+    color: #DC3545;
+}
+.card p{
+    font-weight: 400;
+    font-size: 19,69px;
+    line-height: 30px;
+}

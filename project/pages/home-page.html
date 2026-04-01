@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog UI</title>
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../style/home-pages.css">
+
+    <!-- font chữ -->
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../img/Vector.png" alt="">
+            <h2>RIKKEI_EDU_BLOG</h2>
+        </div>
+        <div class="search-box">
+            <div class="search-box-text">
+                <input type="text" placeholder="Search for articles">
+            </div>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div>
+
+        </div>
+    </header>
+
+    <!-- RECENT POSTS -->
+    <section class="recent">
+        <h2>Recent blog posts</h2>
+
+        <div class="recent-wrapper">
+            <!-- LEFT -->
+            <div class="recent-left">
+                <img src="../img/1.jpg">
+                <p class="date">Date: 2025-02-25</p>
+                <h3>A Productive Day at Work</h3>
+                <p class="desc">
+                    Today was a really productive day at work. I managed to finish a report ahead of schedule and received positive feedback from my manager.
+                </p>
+                <span class="tag purple">Daily Journal</span>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="recent-right">
+                <div class="recent-item">
+                    <img src="../img/2.jpg" class="right-img">
+                    <div>
+                        <p class="date">Date: 2025-02-24</p>
+                        <h4>My First Job Interview Experience</h4>
+                        <p>
+                            I had my first job interview today! I was nervous at first, but as the conversation went on, I felt more confident.
+                        </p>
+                        <span class="tag blue">Work & Career</span>
+                    </div>
+                </div>
+
+                <div class="recent-item">
+                    <img src="../img/3.jpg" class="right-img">
+                    <div>
+                        <p class="date">Date: 2025-02-23</p>
+                        <h4>Overthinking Everything</h4>
+                        <p>
+                            Lately, I have been overthinking everything, from small decisions to bigger life choices. I know I should trust myself
+                        </p>
+                        <span class="tag green">Personal Thoughts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALL POSTS -->
+    <section class="all-posts">
+        <div class="tabs">
+            <a href="./home-page.html">All blog posts</a>
+            <a href="./all-my-post.html">All my posts</a>
+        </div>
+
+        <div class="categories">
+            <span>Daily Journal</span>
+            <span>Work & Career</span>
+            <span>Personal Thoughts</span>
+            <span>Emotions & Feelings</span>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <img src="../img/1.jpg">
+                <p class="date">Date: 2025-02-25</p>
+                <h4 class="card-title">
+                    A Productive Day at Work 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" fill="none">
+                    <path d="M7 21L17 11M17 11H7M17 11V21" stroke="#101828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </h4>
+                <p>Today was a really productive day at work. I managed to finish a report ahead of schedule and received positive feedback from my manager.</p>
+                <span class="tag purple">Daily Journal</span>
+            </div>
+            <div class="card">
+                <img src="../img/2.jpg">
+                <p class="date">Date: 2025-02-24</p>
+                <h4 class="card-title">
+                    <span>My First Job Interview Experience</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" fill="none">
+                    <path d="M7 21L17 11M17 11H7M17 11V21" stroke="#101828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></h4>
+
+                <p>I had my first job interview today! I was nervous at first, but as the conversation went on, I felt more confident. </p>
+                <span class="tag blue">Work & Career</span>
+            </div>
+
+            <div class="card">
+                <img src="../img/3.jpg">
+                <p class="date">Date: 2025-02-23</p>
+                <h4 class="card-title">
+                    <span>Overthinking Everything   </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" fill="none">
+                    <path d="M7 21L17 11M17 11H7M17 11V21" stroke="#101828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></h4>
+
+                <p>Lately, I have been overthinking everything, from small decisions to bigger life choices.I know I should trust myself</p>
+                <span class="tag green">Personal Thoughts</span>
+            </div>
+
+            <div class="card">
+                <img src="../img/4.jpg">
+                <p class="date">Date: 2025-02-16</p>
+                <h4 class="card-title">
+                    <span>How collaboration makes us better designers</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" fill="none">
+                    <path d="M7 21L17 11M17 11H7M17 11V21" stroke="#101828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></h4>
+
+                <p>Collaboration can make our teams stronger, and our individual designs better.</p>
+                <span class="tag blue">Work & Career</span>
+            </div>
+
+            <div class="card">
+                <img src="../img/5.jpg">
+                <p class="date">Date: 2025-02-15</p>
+                <h4 class="card-title">
+                    <span>Our top 10 Javascript frameworks to use</span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" fill="none">
+                    <path d="M7 21L17 11M17 11H7M17 11V21" stroke="#101828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></h4>
+
+                <p>JavaScript frameworks make development easy with extensive features and functionalities.</p>
+                <span class="tag blue">Work & Career</span>
+            </div>
+
+            <div class="card">
+                <img src="../img/6.jpg">
+                <p class="date">Date: 2025-02-05</p>
+                <h4 class="card-title">
+                    <span>Podcast: Creating a better CX Community</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" fill="none">
+                    <path d="M7 21L17 11M17 11H7M17 11V21" stroke="#101828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </h4>
+
+                <p>Starting a community doesn’t need to be complicated, but how do you get started?</p>
+                <span class="tag purple">Emotions & Feelings</span>
+            </div>
+        </div>
+
+        <!-- PAGINATION -->
+        <div class="pagination">
+            <span>← Previous</span>
+            <div class="pages">
+                <span class="active">1</span>
+                <span class="inactive">2</span>
+                <span class="inactive">3</span>
+                <span class="inactive">...</span>
+                <span class="inactive">9</span>
+                <span class="inactive">10</span>
+            </div>
+            <span>Next →</span>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <h2>MY BLOG</h2>
+            </div>
+            <div class="footer-col">
+                <h4>About</h4>
+                <b>Rareblocks</b>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <p>About</p>
+                <p>Features</p>
+                <p>Works</p>
+                <p>Career</p>
+            </div>
+            <div class="footer-col">
+                <h4>Help</h4>
+                <p>Customer Support</p>
+                <p>Delivery Details</p>
+                <p>Terms & Conditions</p>
+                <p>Privacy Policy</p>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <p>Free eBooks</p>
+                <p>Development Tutorial</p>
+                <p>How to - Blog</p>
+                <p>Youtube Playlist</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-github"></i>
+        </div>
+    </footer>
+</body>
+</html>
