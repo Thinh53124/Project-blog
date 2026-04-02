@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Manage Blog</title>
-    <link rel="stylesheet" href="adminManageblog.css" />
+    <link rel="stylesheet" href="manageblog.css" />
   </head>
 
   <body>
@@ -28,25 +28,33 @@
     <div class="app">
       <!-- SIDEBAR -->
       <div class="sidebar">
-        <button class="menu active">
-          <span class="icon-box"><img src="./img/user.png" /></span>
+        <a href="custom.html" class="menu active">
+          <span class="icon-box">
+            <img class="icon" src="./img/user.png" />
+          </span>
           Manage Users
-        </button>
+        </a>
 
-        <button class="menu">
-          <span class="icon-box"><img src="./img/book.png" /></span>
+        <a href="entries.html" class="menu">
+          <span class="icon-box">
+            <img class="icon" src="./img/book.png" />
+          </span>
           Manage Entries
-        </button>
+        </a>
 
-        <button class="menu">
-          <span class="icon-box"><img src="./img/openbook.png" /></span>
+        <a href="manageblog.html" class="menu">
+          <span class="icon-box">
+            <img class="icon" src="./img/openbook.png" />
+          </span>
           Manage Article
-        </button>
+        </a>
 
-        <button class="menu">
-          <span class="icon-box"><img src="./img/logout.png" /></span>
+        <a href="" class="menu logout">
+          <span class="icon-box">
+            <img class="icon" src="./img/logout.png" />
+          </span>
           Log out
-        </button>
+        </a>
       </div>
 
       <!-- MAIN -->
@@ -110,9 +118,9 @@
           </div>
         </div>
 
-        <!-- PAGINATION -->
+        <!-- Pagination -->
         <div class="pagination">
-          <button class="page-btn">
+          <button class="page-btn prev">
             <img src="./img/arrow 1.png" />
             Previous
           </button>
@@ -127,7 +135,7 @@
             <span>10</span>
           </div>
 
-          <button class="page-btn">
+          <button class="page-btn next">
             Next
             <img src="./img/arrow 2.png" />
           </button>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONT + ICON -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="entries.css">
+    <title>Admin entries</title>
+</head>
+
+<body>
+
+    <!-- TOPBAR -->
+    <header>
+      <div class="topbar">
+        <div></div>
+        <div class="icons">
+          <div class="icon-wrapper">
+            <img src="./img/mail.png" />
+            <span class="badge">2</span>
+          </div>
+          <img src="./img/bell.png" />
+          <img src="./img/Ellipse 6.png" class="avatar" />
+        </div>
+      </div>
+    </header>
+
+    <hr />
+
+    <div class="app">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <a href="custom.html" class="menu active">
+          <span class="icon-box">
+            <img class="icon" src="./img/user.png" />
+          </span>
+          Manage Users
+        </a>
+
+        <button class="menu">
+          <span class="icon-box">
+            <img class="icon" src="./img/book.png" />
+          </span>
+          Manage Entries
+        </button>
+
+        <a href="manageblog.html" class="menu">
+          <span class="icon-box">
+            <img class="icon" src="./img/openbook.png" />
+          </span>
+          Manage Article
+        </a>
+
+        <a href="" class="menu logout">
+          <span class="icon-box">
+            <img class="icon" src="./img/logout.png" />
+          </span>
+          Log out
+        </a>
+      </div>
+
+        <!-- CONTENT -->
+        <section class="content">
+
+            <!-- SEARCH -->
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search Article Categories">
+            </div>
+
+            <!-- BOX -->
+            <div class="manage-box">
+                <h2 class="box-title">📂 Manage Categories</h2>
+
+                <div class="form-group">
+                    <label>Category Name:</label>
+                    <input type="text" placeholder="Enter category name">
+                    <button class="btn-add">Add Category</button>
+                </div>
+
+                <h3 class="list-title">📋 Category List</h3>
+
+                <table class="category-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Category Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>
