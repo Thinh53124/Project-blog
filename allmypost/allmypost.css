@@ -74,16 +74,16 @@
 
 .auth .btn {
   padding: 8px 15px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   background: white;
   cursor: pointer;
 }
 
 .auth .btn:last-child {
-  background: black;
-  color: white;
-  border: none;
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
 }
 
 .avatar {
@@ -107,12 +107,14 @@
   flex-direction: column;
   background: white;
   border-radius: 10px;
+  border: none;
   overflow: hidden;
   transition: 0.3s;
   border: 1px solid #eee;
 }
 
 .post-card:hover {
+  border: none;
   transform: translateY(-5px);
 }
 
@@ -125,12 +127,14 @@
 
 /* Content */
 .post-card .date {
-  font-size: 12px;
-  color: #6c63ff;
+  font-size: 14px;
+  color: #6155F5;
   margin: 10px 15px;
+  height: 10px;
 }
 
 .post-card h3 svg {
+  border: none;
   width: 18px;
   height: 18px;
   flex-shrink: 0;
@@ -140,12 +144,14 @@
   margin: 0 15px;
   font-size: 18px;
   display: flex;
-  align-items: center; /* fix lệch dọc */
+  border: none;
+  align-items: center;
   gap: 8px;
   line-height: 1.4;
 }
 
 .post-card .desc {
+  border: none;
   flex-grow: 1;
   font-size: 14px;
   color: #555;
@@ -162,7 +168,20 @@
 
 .post-footer .tag {
   background: #eef2ff;
-  color: #6c63ff;
+  color: #6155F5;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+#post-1{
+  background-color: #026AA2;
+  color: #026AA2;
+}
+
+#edit{
+  background: #F9F5FF;
+  color: #FF2D55;
   padding: 5px 10px;
   border-radius: 10px;
   font-size: 12px;
@@ -181,6 +200,7 @@
 }
 
 .pagination button {
+  color: #667085;
   border: none;
   background: none;
   margin: 0 5px;
@@ -189,8 +209,8 @@
 }
 
 .pagination .active {
-  background: #6c63ff;
-  color: white;
+  background: #F9F5FF;
+  color: #7F56D9;
   border-radius: 5px;
 }
 
@@ -255,4 +275,83 @@
 
 .add-new-article a {
   text-decoration: none;
+}
+
+/* responsive */
+/* TABLET */
+@media (max-width: 1024px) {
+    .card {
+        width: calc(50% - 10px);
+    }
+}
+
+/* TABLET & MOBILE */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    /* RECENT */
+    .recent-wrapper {
+        flex-direction: column;
+    }
+
+    .recent-left,
+    .recent-right {
+        width: 100%;
+    }
+
+    .recent-left img {
+        height: 220px;
+    }
+
+    .recent-item {
+        flex-direction: column;
+    }
+
+    .recent-item img {
+        width: 100%;
+        height: 180px;
+    }
+
+    /* FOOTER */
+    .footer-top {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-col {
+        width: 100%;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
 }

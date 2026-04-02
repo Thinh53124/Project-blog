@@ -19,50 +19,78 @@ body {
     overflow: hidden;
 }
 
-/* Cover Image */
-.cover img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
 /* Form */
 .form {
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .form label {
-    display: block;
     margin: 15px 0 5px;
-    font-weight: bold;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 16px;
 }
 
-/* Inputs */
-.form input,
-.form select{
+/* Input mặc định */
+.form input[type="text"],
+.form input[type="file"],
+.form select {
     width: 100%;
     padding: 10px;
-    background-color: #CCCCCC;
-    border: 1px solid#EFEFEF;
+    background-color: #EFEFEF;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Title -> trắng */
+.form input.title-2 {
+    background-color: #FFFFFF;
+}
+
+/* Category + Mood -> xám đậm hơn */
+.form select.category,
+.form select.mood {
+    background-color: #EFEFEF;
+}
+
+/* Textarea */
+.form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #EFEFEF;
     border-radius: 3px;
     outline: none;
 }
 
-.form textarea{
-    width: 100%;
-    padding: 10px;
-    border: 1px solid#EFEFEF;
-    border-radius: 3px;
-    outline: none;
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.close-btn {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }
 
 /* Button */
 .form button {
     margin-top: 20px;
     padding: 10px;
-    width: 100%;
-    background: #007bff;
+    width: 120px;
+    height: 35px;
+    background: #28A745;
     color: white;
     border: none;
     border-radius: 5px;
@@ -70,5 +98,47 @@ body {
 }
 
 .form button:hover {
-    background: #0056b3;
+    background: #00861f;
+}
+
+/* Status */
+.form-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-status input {
+    height: 16px;
+    width: 16px;
+}
+
+.form-status span {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.form-status label {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* Upload */
+.input-file {
+    text-align: center;
+    border: 1px dashed #D0D5DD;
+    width: 289px;
+    height: 99px;
+    color: #191D23;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.input-file input {
+    display: none;
+}
+
+.input-file label {
+    font-size: 14px;
+    font-weight: 300;
 }

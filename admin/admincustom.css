@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  background: #f5f6f8;
+}
+
+.app {
+  display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  padding: 20px;
+  padding-top: 70px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #cfe2f3;
+  color: #0b5ed7;
+  cursor: pointer;
+}
+
+.menu .icon {
+  width: 20px;
+  height: 20px;
+  background: #ff6a00;
+}
+
+.col-email{
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: #667085;
+}
+
+.sort-icon {
+  width: 10px;
+  height: 10px;
+  margin-left: 0px;
+  opacity: 1;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+#fa-arrow-down {
+  width: 10%;
+  margin-left: 16px;
+}
+
+.menu.active {
+  background: #b6d4fe;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+}
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-wrapper {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background: #facc15;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+.title-box {
+  background: #f9fafb;
+  padding: 12px 16px;
+  border-radius: 10px;
+}
+
+.users {
+  color: #7c3aed;
+  font-size: 12px;
+}
+
+/* SEARCH */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f9fafb;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+/* CONTENT (QUAN TRỌNG: bỏ nền trắng) */
+.content {
+  margin: 0 20px 20px;
+  padding: 0;
+  background: transparent;
+}
+
+/* TABLE HEADER (TÁCH RIÊNG) */
+.table-head {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border: none;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.table-head .col {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+}
+
+/* SORT */
+.sort {
+  font-size: 12px;
+  margin-left: 6px;
+  color: #98a2b3;
+}
+
+/* TABLE BODY */
+.table-body {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+/* ROW */
+.row {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f2f4f7;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.col {
+  flex: 1;
+}
+
+/* NAME */
+.name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.name img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.name span {
+  font-size: 12px;
+  color: #667085;
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions span {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.block {
+  background: #f9f5ff;
+  color: #6941c6;
+}
+
+.unblock {
+  background: #eff8ff;
+  color: #175cd3;
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 14px;
+  height: 36px;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+
+  background: white;
+  color: #344054;
+  cursor: pointer;
+}
+
+.pagination button img {
+  width: 14px;
+  height: 14px;
+}
+
+.pagination button:hover {
+  background: #f9fafb;
+}
+
+/* PAGE NUMBERS */
+.pages {
+  display: flex;
+  gap: 8px;
+}
+
+.pages span {
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.pages .active {
+  background: #f4ebff;
+  color: #7f56d9;
+  font-weight: 600;
+}

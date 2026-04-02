@@ -1,14 +1,37 @@
 body {
+  position: relative;
   font-family: Arial, sans-serif;
   background: #FFFFFF;
   display: flex;
   justify-content: center;
 }
 
+#btn-back {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 8px;
+    border: solid #D0D5DD;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+#btn-back:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
 .container {
   width: 1500px;
   padding: 20px 20px 20px 60px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
 }
 
 /* Post */
@@ -20,6 +43,7 @@ body {
   padding: 12px 16px;
   background: #F7F8F9;
   margin-left: 20px;
+  
 }
 
 .post-header {
@@ -39,12 +63,23 @@ body {
   margin: 0;
 }
 
+
 .avatar {
   width: 32px;
   height: 32px;
   border-radius: 50%;
   position: absolute;
   left: 16px;
+}
+
+.line {
+  position: absolute;
+  left: 28px;
+  top: 72px;
+  width: 2px;
+  height: 340px;
+  background-color: #ccc;
+  border: none;
 }
 
 .container > .avatar:nth-of-type(1) {
@@ -68,6 +103,15 @@ body {
     letter-spacing: 0%;
     background-color: #F7F8F9;
     color: #101828;
+}
+
+#post-icon {
+  color: #64748B;
+  width: 14px;
+  height: 14px;
+  margin-left: 1px;
+  vertical-align: middle;
+  opacity: 0.6;
 }
 
 .post-actions {
@@ -110,8 +154,21 @@ body {
 .comment-actions {
   display: flex;
   gap: 4px;
-  width: 60px;
+  width: 1000px;
   height: 16px;
   font-size: 12px;
   color: #667085;
+}
+.drop-down{
+  padding-left: 50px;
+  position: relative;
+}
+
+
+.drop-down .avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0px;
 }

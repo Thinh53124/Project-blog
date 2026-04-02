@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <title>Post UI</title>
-  <link rel="stylesheet" href="details.css"/>
+  <link rel="stylesheet" href="./details.css" />
 </head>
+
 <body>
 
-<div class="container">
+  <img src="Icon (1).png" alt="" id="btn-back">
 
-  <!-- Post -->
-  <img src="Avatar.png" class="avatar"/>
-  <div class="post">
-    <div class="post-header">
-      <h2>A Productive Day at Work</h2>
-    </div>
+  <div class="container">
 
-    <p class="post-content">
-      Today was a really productive day at work. I managed to finish a report ahead of schedule and received positive feedback from my manager. After work, I went for a walk in the park, enjoying the fresh air. Looking forward to another great day tomorrow!
-    </p>
+    <!-- Post -->
+     <div class="post">
 
-    <div class="post-actions">
-      <span>15 Like 👍</span>
-      <span>6 Replies 💬</span>
-    </div>
+       <img src="Avatar.png" class="avatar" />
+       <hr class="line">
+       <div class="person">
+         <div class="post-header">
+           <h2>A Productive Day at Work</h2>
+         </div>
+
+         <p class="post-content">
+           Today was a really productive day at work. I managed to finish a report ahead of schedule and received positive
+           feedback from my manager. After work, I went for a walk in the park, enjoying the fresh air. Looking forward to
+           another great day tomorrow!
+         </p>
+
+         <div class="post-actions">
+           <span>15 Like <img src="Icon.png" alt="" id="post-icon"> </span>
+           <span>6 Replies <img src="Vector (1).png" alt="" id="post-icon"> </span>
+         </div>
+       </div>
+     </div><br>
+
+    <!-- Comments -->
+    <div class="view-comments">View all 12 comments ▼</div>
+     <div class="drop-down">
+       <div class="person">
+         <img src="Avatar (1).png" class="avatar" />
+         <div class="comment">
+
+           <div class="comment-content">
+             very good!
+             <div class="comment-actions">
+               <p>15 Like <img src="Icon.png" alt="" id="post-icon"> · 6 Replies <img src="Vector (1).png" alt="" id="post-icon"> </p>
+             </div>
+           </div>
+         </div>
+       </div>
+
+       <br>
+       <div class="person">
+         <img src="Avatar (2).png" class="avatar" />
+         <div class="comment">
+           <div class="comment-content">
+             hello rikkei!
+             <div class="comment-actions">
+               <p>15 Like <img src="Icon.png" alt="" id="post-icon"> · 6 Replies <img src="Vector (1).png" alt="" id="post-icon"> </p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
   </div>
 
-  <!-- Comments -->
-  <div class="view-comments">View all 12 comments ▼</div>
-
-  <img src="Avatar (1).png" class="avatar"/>
-  <div class="comment">
-    <div class="comment-content">
-      very good!
-      <div class="comment-actions">
-        15 Like 👍 · 6 Replies 💬
-      </div>
-    </div>
-  </div>
-
-  <img src="Avatar (2).png" class="avatar"/>
-  <div class="comment">
-    <div class="comment-content">
-      hello rikkei!
-      <div class="comment-actions">
-        15 Like 👍 · 6 Replies 💬
-      </div>
-    </div>
-  </div>
-
-</div>
 
 </body>
+
 </html>

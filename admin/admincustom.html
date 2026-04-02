@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="admincustom.css" />
+  </head>
+
+  <body>
+    <!-- TOPBAR -->
+    <header>
+      <div class="topbar">
+        <div></div>
+        <div class="icons">
+          <div class="icon-wrapper">
+            <img src="./img/mail.png" alt="" />
+            <span class="badge">2</span>
+          </div>
+          <img src="./img/bell.png" alt="" />
+          <img src="./img/Ellipse 6.png" class="avatar" />
+        </div>
+      </div>
+    </header>
+
+    <div class="app">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <button class="menu active">
+          <img class="icon" src="./img/user.png" />
+          Manage Users
+        </button>
+
+        <button class="menu">
+          <img class="icon" src="./img/book.png" />
+          Manage Entries
+        </button>
+
+        <button class="menu">
+          <img class="icon" src="./img/openbook.png" />
+          Manage Article
+        </button>
+
+        <button class="menu logout">
+          <img class="icon" src="./img/logout.png" />
+          Log out
+        </button>
+      </div>
+
+      <!-- MAIN -->
+      <div class="main">
+        <!-- HEADER -->
+        <div class="header">
+          <div class="title-box">
+            <h2 class="user">
+              Team members <span class="users">100 users</span>
+            </h2>
+          </div>
+
+          <div class="search-box">
+            <img src="./img/search.png" alt="" />
+            <input type="text" placeholder="Search user" />
+          </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+          <!-- TABLE HEADER (TÁCH RIÊNG) -->
+          <div class="table-head">
+            <div class="col name">
+              Name 
+              <img class="sort-icon" src="./img/image.png" />
+            </div>
+            <div class="col status">Status <i class="fa-solid fa-arrow-down" id="fa-arrow-down"></i></div>
+            <div class="col email">Email address</div>
+            <div class="col actions">Actions</div>
+          </div>
+
+          <!-- TABLE BODY -->
+          <div class="table-body">
+            <!-- ROW -->
+            <div class="row">
+              <div class="col name">
+                <img src="./img/Avatar.png" />
+                <div>
+                  <p>Olivia Rhye</p>
+                  <span>@olivia</span>
+                </div>
+              </div>
+              <div class="col status">hoạt động</div>
+              <div class="col-email">olivia@untitledui.com</div>
+              <div class="col actions">
+                <span class="block">block</span>
+                <span class="unblock">unblock</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col name">
+                <img src="./img/Avatar (1).png" />
+                <div>
+                  <p>Phoenix Baker</p>
+                  <span>@phoenix</span>
+                </div>
+              </div>
+              <div class="col status">hoạt động</div>
+              <div class="col-email">phoenix@untitledui.com</div>
+              <div class="col actions">
+                <span class="block">block</span>
+                <span class="unblock">unblock</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col name">
+                <img src="./img/Avatar (2).png" />
+                <div>
+                  <p>Lana Steiner</p>
+                  <span>@lana</span>
+                </div>
+              </div>
+              <div class="col status">hoạt động</div>
+              <div class="col-email">lana@untitledui.com</div>
+              <div class="col actions">
+                <span class="block">block</span>
+                <span class="unblock">unblock</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col name">
+                <img src="./img/Avatar (3).png" />
+                <div>
+                  <p>Demi Wilkinson</p>
+                  <span>@demi</span>
+                </div>
+              </div>
+              <div class="col status">hoạt động</div>
+              <div class="col-email">demi@untitledui.com</div>
+              <div class="col actions">
+                <span class="block">block</span>
+                <span class="unblock">unblock</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col name">
+                <img src="./img/Avatar (4).png" />
+                <div>
+                  <p>Candice Wu</p>
+                  <span>@candice</span>
+                </div>
+              </div>
+              <div class="col status">hoạt động</div>
+              <div class="col-email">candice@untitledui.com</div>
+              <div class="col actions">
+                <span class="block">block</span>
+                <span class="unblock">unblock</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col name">
+                <img src="./img/Avatar (5).png" />
+                <div>
+                  <p>Natalia Craig</p>
+                  <span>@natali</span>
+                </div>
+              </div>
+              <div class="col status">hoạt động</div>
+              <div class="col-email">natali@untitledui.com</div>
+              <div class="col actions">
+                <span class="block">block</span>
+                <span class="unblock">unblock</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col name">
+                <img src="./img/Avatar (6).png" />
+                <div>
+                  <p>Drew Cano</p>
+                  <span>@drew</span>
+                </div>
+              </div>
+              <div class="col status">hoạt động</div>
+              <div class="col-email">drew@untitledui.com</div>
+              <div class="col actions">
+                <span class="block">block</span>
+                <span class="unblock">unblock</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col name">
+                <img src="./img/Avatar (7).png" />
+                <div>
+                  <p>Orlando Diggs</p>
+                  <span>@orlando</span>
+                </div>
+              </div>
+              <div class="col status">hoạt động</div>
+              <div class="col-email">orlando@untitledui.com</div>
+              <div class="col actions">
+                <span class="block">block</span>
+                <span class="unblock">unblock</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col name">
+                <img src="./img/Avatar (8).png" />
+                <div>
+                  <p>Andi Lane</p>
+                  <span>@andi</span>
+                </div>
+              </div>
+              <div class="col status">hoạt động</div>
+              <div class="col-email">andi@untitledui.com</div>
+              <div class="col actions">
+                <span class="block">block</span>
+                <span class="unblock">unblock</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col name">
+                <img src="./img/Avatar (9).png" />
+                <div>
+                  <p>Kate Morrison</p>
+                  <span>@kate</span>
+                </div>
+              </div>
+              <div class="col status">hoạt động</div>
+              <div class="col-email">kate@untitledui.com</div>
+              <div class="col actions">
+                <span class="block">block</span>
+                <span class="unblock">unblock</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAGINATION -->
+          <div class="pagination">
+            <button class="prev">
+              <img src="./img/arrow 1.png" />
+              Previous
+            </button>
+
+            <div class="pages">
+              <span class="active">1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>...</span>
+              <span>8</span>
+              <span>9</span>
+              <span>10</span>
+            </div>
+
+            <button class="next">
+              Next
+              <img src="./img/arrow 2.png" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

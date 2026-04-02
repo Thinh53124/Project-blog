@@ -4,36 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Article</title>
-    <link rel="stylesheet" href="newpost.css">
+    <link rel="stylesheet" href="./newpost.css">
 </head>
 <body>
-
     <div class="container">
 
         <form class="form">
-
-            <h1>📝 Add New Article</h1>
+            <div class="form-header">
+                <h1 style="font-size: 24px; line-height: 100%; font-weight: 700;">📝 Add New Article</h1>
+                <img src="x-circle.png" class="close-btn">
+            </div>
+            <br><br><br>
 
             <!-- Title -->
-            <label>Title:</label>
-            <input type="text" class="title-input" placeholder="Enter your title...">
+            <label>Title:</label><br><br>
+            <input type="text" class="title-2" placeholder="Enter your title..."><br><br>
 
-            <label>Article Categories:</label>
-            <input type="text" placeholder="Enter category">
+            <!-- Category -->
+            <label>Article Categories:</label><br>
+            <select class="category">
+                <option>Daily Journal</option>
+                <option>Work & Career</option>
+                <option>Personal Thoughts</option>
+                <option>Emotions & Feelings</option>
+            </select>
+            <br><br>
 
-            <label>Mood:</label>
-            <select>
+            <!-- Mood -->
+            <label>Mood:</label><br>
+            <select class="mood">
                 <option>😊 Happy</option>
                 <option>😢 Sad</option>
                 <option>😎 Cool</option>
-            </select>
+            </select><br><br>
 
-            <label>Content:</label>
-            <textarea rows="8" placeholder="Write your article..."></textarea>
+            <!-- Content -->
+            <label>Content:</label><br>
+            <textarea rows="8"></textarea>
 
-            <input type="file">
+            <!-- Status -->
+            <div class="form-status">
+                <span>Status</span>
 
-            <button type="submit">Publish</button>
+                <input type="radio" id="public" name="Status" value="public">
+                <label for="public">Public</label>
+
+                <input type="radio" id="private" name="Status" value="private">
+                <label for="private">Private</label>
+            </div><br>
+
+            <!-- Upload -->
+            <div class="input-file">
+                <input type="file" id="file-input">
+                <img src="../img/content.png" alt=""><br>
+                <img src="Group.png" alt=""><br>
+                <label for="file-input">Browse and chose the files you want to upload from your computer</label>
+            </div>
+
+            <button type="submit">Add</button>
 
         </form>
 
