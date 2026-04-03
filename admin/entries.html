@@ -63,40 +63,42 @@
         </a>
       </div>
 
-        <!-- CONTENT -->
-        <section class="content">
+      <!-- CONTENT -->
+      <section class="content">
 
-            <!-- SEARCH -->
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Search Article Categories">
-            </div>
+        <!-- SEARCH -->
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" placeholder="Search Category">
+        </div>
 
-            <!-- BOX -->
-            <div class="manage-box">
-                <h2 class="box-title">📂 Manage Categories</h2>
+        <!-- BOX -->
+        <div class="manage-box">
+          <h2 class="box-title">📂 Manage Categories</h2>
 
-                <div class="form-group">
-                    <label>Category Name:</label>
-                    <input type="text" placeholder="Enter category name">
-                    <button class="btn-add">Add Category</button>
-                </div>
+          <div class="form-group">
+            <label>Category Name:</label>
+            <input type="text" id="categoryInput" placeholder="Enter category name">
+            <button class="btn-add" id="btnAdd">Add Category</button>
+          </div>
 
-                <h3 class="list-title">📋 Category List</h3>
+          <h3 class="list-title">📋 Category List</h3>
 
-                <table class="category-table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Category Name</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
+          <table class="category-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Category Name</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="categoryBody"></tbody>
+          </table>
+        </div>
 
-        </section>
-    </main>
+      </section>
+    </div>
 
+    <script src="entries.js"></script>
 </body>
 </html>

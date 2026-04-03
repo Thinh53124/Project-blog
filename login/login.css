@@ -134,3 +134,13 @@ body {
 .confirm-link{
     color: red;
 }
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin: 4px 0 8px;
+}
+
+.input-error {
+    border: 2px solid red;
+}
