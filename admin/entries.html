@@ -1,19 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- FONT + ICON -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-    <link rel="stylesheet" href="entries.css">
+    <link rel="stylesheet" href="entries.css" />
     <title>Admin entries</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- TOPBAR -->
     <header>
       <div class="topbar">
@@ -65,11 +70,10 @@
 
       <!-- CONTENT -->
       <section class="content">
-
         <!-- SEARCH -->
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="searchInput" placeholder="Search Category">
+          <input type="text" id="searchInput" placeholder="Search Category" />
         </div>
 
         <!-- BOX -->
@@ -78,10 +82,13 @@
 
           <div class="form-group">
             <label>Category Name:</label>
-            <input type="text" id="categoryInput" placeholder="Enter category name">
+            <input
+              type="text"
+              id="categoryInput"
+              placeholder="Enter category name"
+            />
             <button class="btn-add" id="btnAdd">Add Category</button>
           </div>
-
           <h3 class="list-title">📋 Category List</h3>
 
           <table class="category-table">
@@ -95,10 +102,21 @@
             <tbody id="categoryBody"></tbody>
           </table>
         </div>
-
       </section>
     </div>
 
+    <!-- POPUP EDIT -->
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <h3>Edit Category</h3>
+        <input type="text" id="editInput" />
+        <div class="modal-actions">
+          <button id="btnSaveEdit">Save</button>
+          <button id="btnCancelEdit">Cancel</button>
+        </div>
+      </div>
+    </div>
+
     <script src="entries.js"></script>
-</body>
+  </body>
 </html>

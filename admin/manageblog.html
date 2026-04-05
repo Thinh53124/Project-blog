@@ -142,6 +142,23 @@
         </div>
       </div>
     </div>
+
+    <!-- MODAL EDIT POST -->
+    <div id="popup" class="popup" style="display: none;">
+      <div class="popup-box">
+        <h3 id="popup-title"></h3>
+
+        <input id="popup-input1" placeholder="Nhập tiêu đề" />
+        <textarea id="popup-input2" placeholder="Nhập nội dung"></textarea>
+        <input id="popup-input3" placeholder="Nhập categoryId" />
+
+        <div class="popup-actions">
+          <button class="btn-save" onclick="handleOk()">Lưu</button>
+          <button class="btn-cancel" onclick="closePopup()">Hủy</button>
+        </div>
+      </div>
+    </div>
+
     <script src="manageblog.js"></script>
   </body>
 </html>
