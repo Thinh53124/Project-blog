@@ -1,35 +1,12 @@
-let posts = JSON.parse(localStorage.getItem("posts")) || [
-  {
-    id: 1,
-    title: "Học nấu cà sốt cà chua",
-    categoryId: 1,
-    content: "tôi đã học được cách nấu ăn...",
-    status: "Public",
-    img: "./img/Bài viết 1.png",
-  },
-  {
-    id: 2,
-    title: "Bí kíp viết CV ngành IT",
-    categoryId: 2,
-    content: "Chia sẻ cách viết CV ấn tượng...",
-    status: "Private",
-    img: "./img/Bài viết 2.png",
-  },
-];
+let posts = JSON.parse(localStorage.getItem("posts")) || [];
 
-
-
-let categories = JSON.parse(localStorage.getItem("categories")) || [
-  { id: 1, name: "Nấu ăn" },
-  { id: 2, name: "IT" },
-];
+let categories = JSON.parse(localStorage.getItem("categories")) || [];
 
 const table = document.querySelector(".post-table");
 
-const staticPopup = document.getElementById("popup");
-if (staticPopup) {
-  staticPopup.style.display = "none";
-}
+/* pagination */
+let currentPage = 1;
+const perPage = 5;
 
 function save() {
   localStorage.setItem("posts", JSON.stringify(posts));
@@ -43,39 +20,75 @@ function getCategoryName(id) {
 function render() {
   document.querySelectorAll(".post-row").forEach((e) => e.remove());
 
-  posts.forEach((p) => {
+  const start = (currentPage - 1) * perPage;
+  const end = start + perPage;
+  const pagePosts = posts.slice(start, end);
+
+  pagePosts.forEach((p) => {
     const row = document.createElement("div");
     row.className = "post-row";
 
     row.innerHTML = `
-      <img src="${p.img}" class="thumb" />
-      <div>${p.title}</div>
-      <div>${getCategoryName(p.categoryId)}</div>
-      <div>${p.content}</div>
-
-      <span class="status ${p.status.toLowerCase()}">
-        <b>${p.status}</b>
-      </span>
-
-      <div class="status-select">
-        <select onchange="changeStatus(${p.id}, this.value)">
-          <option ${p.status === "Public" ? "selected" : ""}>Public</option>
-          <option ${p.status === "Private" ? "selected" : ""}>Private</option>
-        </select>
-      </div>
-
-      <div class="actions">
-        <button class="btn-action edit" onclick="editPost(${p.id})">
-          Sửa
-        </button>
-        <button class="btn-action delete" onclick="deletePost(${p.id})">
-          Xóa
-        </button>
-      </div>
-    `;
+        <img src="${p.img}" class="thumb" />
+        <div>${p.title}</div>
+        <div>${getCategoryName(p.categoryId)}</div>
+        <div>${p.content}</div>
+        <span class="status ${p.status.toLowerCase()}">
+          <b>${p.status}</b>
+        </span>
+        <div class="status-select">
+          <select onchange="changeStatus(${p.id}, this.value)">
+            <option ${p.status === "Public" ? "selected" : ""}>Public</option>
+            <option ${p.status === "Private" ? "selected" : ""}>Private</option>
+          </select>
+        </div>
+        <div class="actions">
+          <button class="btn-action edit" onclick="editPost(${p.id})">Sửa</button>
+          <button class="btn-action delete" onclick="deletePost(${p.id})">Xóa</button>
+        </div>
+      `;
 
     table.appendChild(row);
   });
+}
+
+function renderPagination() {
+  const totalPages = Math.ceil(posts.length / perPage);
+  const pagesContainer = document.querySelector(".pages");
+  pagesContainer.innerHTML = "";
+
+  for (let i = 1; i <= totalPages; i++) {
+    const span = document.createElement("span");
+    span.innerText = i;
+
+    if (i === currentPage) {
+      span.classList.add("active");
+    }
+
+    span.onclick = () => {
+      currentPage = i;
+      render();
+      renderPagination();
+    };
+
+    pagesContainer.appendChild(span);
+  }
+
+  document.querySelector(".prev").onclick = () => {
+    if (currentPage > 1) {
+      currentPage--;
+      render();
+      renderPagination();
+    }
+  };
+
+  document.querySelector(".next").onclick = () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      render();
+      renderPagination();
+    }
+  };
 }
 
 function changeStatus(id, value) {
@@ -85,16 +98,12 @@ function changeStatus(id, value) {
   post.status = value;
   save();
   render();
+  renderPagination();
 }
 
 function createPopup(contentHTML) {
-  const old = document.getElementById("popup");
-  if (old) old.style.display = "none";
-
-  document.querySelectorAll(".popup.dynamic").forEach((p) => p.remove());
-
   const overlay = document.createElement("div");
-  overlay.className = "popup dynamic";
+  overlay.className = "popup";
 
   const box = document.createElement("div");
   box.className = "popup-box";
@@ -110,34 +119,34 @@ function createPopup(contentHTML) {
   return overlay;
 }
 
-function closePopup(popup) {
-  if (popup) popup.remove();
-}
-
 function customAlert(message) {
   const popup = createPopup(`
-    <h3>${message}</h3>
-    <button id="okBtn">OK</button>
-  `);
+      <h3>${message}</h3>
+      <div class="popup-actions">
+        <button class="btn-save">OK</button>
+      </div>
+    `);
 
-  popup.querySelector("#okBtn").onclick = () => {
-    popup.remove();
-  };
+  popup.querySelector("button").onclick = () => popup.remove();
 }
 
 function customConfirm(message, callback) {
   const popup = createPopup(`
-    <h3>${message}</h3>
-    <button id="yesBtn">OK</button>
-    <button id="noBtn">Hủy</button>
-  `);
+      <h3>${message}</h3>
+      <div class="popup-actions">
+        <button class="btn-save">OK</button>
+        <button class="btn-cancel">Hủy</button>
+      </div>
+    `);
 
-  popup.querySelector("#yesBtn").onclick = () => {
+  const [okBtn, cancelBtn] = popup.querySelectorAll("button");
+
+  okBtn.onclick = () => {
     callback(true);
     popup.remove();
   };
 
-  popup.querySelector("#noBtn").onclick = () => {
+  cancelBtn.onclick = () => {
     callback(false);
     popup.remove();
   };
@@ -152,50 +161,95 @@ function editPost(id) {
     return;
   }
 
-  const categoryOptions = categories
-    .map((c) => `${c.id}: ${c.name}`)
-    .join("<br>");
-
   const popup = createPopup(`
-    <h3>Sửa bài viết</h3>
+    <div class="form">
 
-    <input id="title" value="${post.title.replace(/"/g, '&quot;')}" placeholder="Tiêu đề"/>
-    <textarea id="content">${post.content}</textarea>
-    <input id="category" value="${post.categoryId}" placeholder="Category ID"/>
+      <img src="./img/x-circle.png" class="close-btn">
 
-    <p>${categoryOptions}</p>
+      <div class="form-header">
+        <h1>✏️ Edit Article</h1>
+      </div>
 
-    <button id="saveBtn">Lưu</button>
-    <button id="cancelBtn">Hủy</button>
+      <br>
+
+      <label>Title:</label><br>
+      <input type="text" id="new-title" value="${post.title.replace(/"/g, "&quot;")}"><br><br>
+
+      <label>Article Categories:</label><br>
+      <select id="new-category">
+        ${categories
+          .map(
+            (c) => `
+          <option value="${c.id}" ${c.id === post.categoryId ? "selected" : ""}>
+            ${c.name}
+          </option>
+        `,
+          )
+          .join("")}
+      </select><br><br>
+
+      <label>Mood:</label><br>
+      <select id="new-mood">
+        <option ${post.mood === "😊 Happy" ? "selected" : ""}>😊 Happy</option>
+        <option ${post.mood === "😢 Sad" ? "selected" : ""}>😢 Sad</option>
+        <option ${post.mood === "😎 Cool" ? "selected" : ""}>😎 Cool</option>
+      </select><br><br>
+
+      <label>Content:</label><br>
+      <textarea id="new-content" rows="6">${post.content}</textarea><br><br>
+
+      <div class="form-status">
+        <span>Status</span>
+        <input type="radio" name="newStatus" value="Public" ${post.status === "Public" ? "checked" : ""}> Public
+        <input type="radio" name="newStatus" value="Private" ${post.status === "Private" ? "checked" : ""}> Private
+      </div><br>
+
+      <!-- GIỮ NGUYÊN PHẦN UPLOAD NHƯNG KHÔNG XỬ LÝ -->
+      <div class="upload-box">
+        <input type="file" id="file-input">
+        <label class="upload-label">
+          <img src="./img/upload-icon.png" alt="">
+          <p>Ảnh hiện tại sẽ được giữ nguyên</p>
+        </label>
+      </div>
+
+      <br><br>
+
+      <div class="popup-actions">
+        <button id="updatePostBtn" class="btn-save">Update</button>
+      </div>
+
+    </div>
   `);
 
-  popup.querySelector("#saveBtn").onclick = () => {
-    const newTitle = popup.querySelector("#title").value.trim();
-    const newContent = popup.querySelector("#content").value.trim();
-    const newCategoryId = Number(popup.querySelector("#category").value);
+  // xử lý update
+  popup.querySelector("#updatePostBtn").onclick = () => {
+    const title = popup.querySelector("#new-title").value.trim();
+    const content = popup.querySelector("#new-content").value.trim();
+    const categoryId = Number(popup.querySelector("#new-category").value);
+    const status = popup.querySelector('input[name="newStatus"]:checked').value;
+    const mood = popup.querySelector("#new-mood").value;
 
-    if (!newTitle || !newContent) {
-      customAlert("Không được để trống!");
+    if (!title || !content) {
+      customAlert("Vui lòng nhập đầy đủ thông tin!");
       return;
     }
 
-    const categoryExists = categories.some((c) => c.id === newCategoryId);
-
-    if (!categoryExists) {
-      customAlert("ID chủ đề không hợp lệ!");
-      return;
-    }
-
-    post.title = newTitle;
-    post.content = newContent;
-    post.categoryId = newCategoryId;
+    // update dữ liệu
+    post.title = title;
+    post.content = content;
+    post.categoryId = categoryId;
+    post.status = status;
+    post.mood = mood;
 
     save();
     render();
+    renderPagination();
+
     popup.remove();
   };
 
-  popup.querySelector("#cancelBtn").onclick = () => {
+  popup.querySelector(".close-btn").onclick = () => {
     popup.remove();
   };
 }
@@ -204,8 +258,15 @@ function deletePost(id) {
   customConfirm("Xóa bài viết?", (result) => {
     if (result) {
       posts = posts.filter((p) => p.id !== id);
+
+      const totalPages = Math.ceil(posts.length / perPage);
+      if (currentPage > totalPages) {
+        currentPage = totalPages || 1;
+      }
+
       save();
       render();
+      renderPagination();
     }
   });
 }
@@ -216,4 +277,113 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+function goToAdd() {
+  window.location.href = "../new post/newpost.html";
+}
+
+function openAddPopup() {
+  if (categories.length === 0) {
+    customAlert("Chưa có chủ đề! Hãy tạo trước.");
+    return;
+  }
+
+  const popup = createPopup(`
+      <div class="form">
+
+        <img src="./img/x-circle.png" class="close-btn">
+        <div class="form-header">
+          <h1>📝 Add New Article</h1>
+        </div>
+
+        <br>
+
+        <label>Title:</label><br>
+        <input type="text" id="new-title" placeholder="Enter your title..."><br><br>
+
+        <label>Article Categories:</label><br>
+        <select id="new-category">
+          ${categories
+            .map((c) => `<option value="${c.id}">${c.name}</option>`)
+            .join("")}
+        </select><br><br>
+
+        <!-- GIỮ NGUYÊN MOOD -->
+        <label>Mood:</label><br>
+        <select id="new-mood">
+          <option>😊 Happy</option>
+          <option>😢 Sad</option>
+          <option>😎 Cool</option>
+        </select><br><br>
+
+        <label>Content:</label><br>
+        <textarea id="new-content" rows="6"></textarea><br><br>
+
+        <div class="form-status">
+          <span>Status</span>
+          <input type="radio" name="newStatus" value="Public" checked> Public
+          <input type="radio" name="newStatus" value="Private"> Private
+        </div><br>
+
+        <div class="upload-box">
+          <input type="file" id="file-input">
+
+          <label for="file-input" class="upload-label">
+            <img src="./img/upload-icon.png" alt="">
+            <p>Browse and choose the files you want<br>to upload from your computer</p>
+          </label>
+        </div>
+        <br><br>
+
+        <div class="popup-actions">
+          <button id="addPostBtn" class="btn-save">Add</button>
+        </div>
+
+      </div>
+    `);
+
+  // xử lý add
+  popup.querySelector("#addPostBtn").onclick = () => {
+    const title = popup.querySelector("#new-title").value.trim();
+    const content = popup.querySelector("#new-content").value.trim();
+    const categoryId = Number(popup.querySelector("#new-category").value);
+    const status = popup.querySelector('input[name="newStatus"]:checked').value;
+
+    // lấy mood
+    const mood = popup.querySelector("#new-mood").value;
+
+    if (!title || !content) {
+      customAlert("Vui lòng nhập đầy đủ thông tin!");
+      return;
+    }
+
+    let newId = 1;
+    if (posts.length > 0) {
+      newId = Math.max(...posts.map((p) => p.id)) + 1;
+    }
+
+    const newPost = {
+      id: newId,
+      title,
+      content,
+      categoryId,
+      status,
+      mood,
+      img: "./img/default.png",
+    };
+
+    posts.push(newPost);
+
+    save();
+    render();
+    renderPagination();
+
+    popup.remove();
+  };
+
+  popup.querySelector(".close-btn").onclick = () => {
+    popup.remove();
+  };
+}
+
 render();
+renderPagination();

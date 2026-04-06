@@ -6,7 +6,6 @@
     <title>Admin Manage Blog</title>
     <link rel="stylesheet" href="manageblog.css" />
   </head>
-
   <body>
     <!-- TOPBAR -->
     <header>
@@ -14,17 +13,14 @@
         <div></div>
         <div class="icons">
           <div class="icon-wrapper">
-            <img src="./img/mail.png" />
-            <span class="badge">2</span>
+            <img src="./img/mail.png" /> <span class="badge">2</span>
           </div>
           <img src="./img/bell.png" />
           <img src="./img/Ellipse 6.png" class="avatar" />
         </div>
       </div>
     </header>
-
     <hr />
-
     <div class="app">
       <!-- SIDEBAR -->
       <div class="sidebar">
@@ -34,21 +30,18 @@
           </span>
           Manage Users
         </a>
-
         <a href="entries.html" class="menu">
           <span class="icon-box">
             <img class="icon" src="./img/book.png" />
           </span>
           Manage Entries
         </a>
-
         <a href="manageblog.html" class="menu">
           <span class="icon-box">
             <img class="icon" src="./img/openbook.png" />
           </span>
           Manage Article
         </a>
-
         <a href="" class="menu logout">
           <span class="icon-box">
             <img class="icon" src="./img/logout.png" />
@@ -56,15 +49,14 @@
           Log out
         </a>
       </div>
-
       <!-- MAIN -->
       <div class="main">
         <div class="post-header">
           <h2>Quản lý bài viết</h2>
-          <button class="btn-add">Thêm mới bài viết</button>
+          <button class="btn-add" onclick="openAddPopup()">
+            Thêm mới bài viết
+          </button>
         </div>
-
-        <!-- TABLE -->
         <div class="post-table">
           <div class="post-head">
             <div>Ảnh</div>
@@ -75,90 +67,14 @@
             <div>Chỉnh sửa trạng thái</div>
             <div>Hành động</div>
           </div>
-
-          <!-- ROW -->
-          <div class="post-row">
-            <img src="./img/Bài viết 1.png" class="thumb" />
-            <div>Học nấu cà sốt cà chua</div>
-            <div>Nấu ăn</div>
-            <div>tôi đã học được cách nấu ăn...</div>
-            <span class="status public"><b>Public</b></span>
-
-            <div class="status-select">
-              <select>
-                <option>Public</option>
-                <option>Private</option>
-              </select>
-            </div>
-
-            <div class="actions">
-              <button class="edit">Sửa</button>
-              <button class="delete">Xóa</button>
-            </div>
-          </div>
-
-          <div class="post-row">
-            <img src="./img/Bài viết 2.png" class="thumb" />
-            <div>Bí kíp viết CV ngành IT</div>
-            <div>IT</div>
-            <div>Chia sẻ cách viết CV ấn tượng...</div>
-            <span class="status private"><b>Private</b></span>
-
-            <div class="status-select">
-              <select>
-                <option>Private</option>
-                <option>Public</option>
-              </select>
-            </div>
-
-            <div class="actions">
-              <button class="edit">Sửa</button>
-              <button class="delete">Xóa</button>
-            </div>
-          </div>
         </div>
-
-        <!-- Pagination -->
         <div class="pagination">
-          <button class="page-btn prev">
-            <img src="./img/arrow 1.png" />
-            Previous
-          </button>
-
-          <div class="pages">
-            <span class="active">1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>...</span>
-            <span>8</span>
-            <span>9</span>
-            <span>10</span>
-          </div>
-
-          <button class="page-btn next">
-            Next
-            <img src="./img/arrow 2.png" />
-          </button>
+          <button class="page-btn prev">Previous</button>
+          <div class="pages"></div>
+          <button class="page-btn next">Next</button>
         </div>
       </div>
     </div>
-
-    <!-- MODAL EDIT POST -->
-    <div id="popup" class="popup" style="display: none;">
-      <div class="popup-box">
-        <h3 id="popup-title"></h3>
-
-        <input id="popup-input1" placeholder="Nhập tiêu đề" />
-        <textarea id="popup-input2" placeholder="Nhập nội dung"></textarea>
-        <input id="popup-input3" placeholder="Nhập categoryId" />
-
-        <div class="popup-actions">
-          <button class="btn-save" onclick="handleOk()">Lưu</button>
-          <button class="btn-cancel" onclick="closePopup()">Hủy</button>
-        </div>
-      </div>
-    </div>
-
     <script src="manageblog.js"></script>
   </body>
 </html>

@@ -1,4 +1,3 @@
-// bắt submit
 document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -12,7 +11,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
     let hasError = false;
 
-    // validate name
+    // validate tên
     if (firstName === "") {
         showError(0, "Họ không được để trống");
         hasError = true;
@@ -48,7 +47,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
         hasError = true;
     }
 
-    // validate confirm
+    // validate confirm password
     if (confirmPassword === "") {
         showError("confirmPassword", "Mật khẩu xác nhận không được để trống");
         hasError = true;
@@ -59,7 +58,6 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
     if (hasError) return;
 
-    // LƯU USERS 
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
     // check email tồn tại
@@ -69,7 +67,14 @@ document.querySelector("form").addEventListener("submit", function (e) {
         return;
     }
 
+    // tạo id tự tăng
+    let newId = 1;
+    if (users.length > 0) {
+        newId = Math.max(...users.map(u => u.id || 0)) + 1;
+    }
+
     let newUser = {
+        id: newId,
         name: firstName + " " + lastName,
         username: "@" + firstName.toLowerCase(),
         email: email,
@@ -87,7 +92,6 @@ document.querySelector("form").addEventListener("submit", function (e) {
     }, 1500);
 });
 
-// hiện lỗi
 function showError(field, message) {
     let input;
 
@@ -110,13 +114,11 @@ function showError(field, message) {
     input.parentElement.appendChild(errorEl);
 }
 
-// xóa lỗi
 function clearAllErrors() {
     document.querySelectorAll(".error-message").forEach(el => el.remove());
     document.querySelectorAll(".input-error").forEach(el => el.classList.remove("input-error"));
 }
 
-// thành công
 function showSuccess(message) {
     let successEl = document.createElement("p");
     successEl.classList.add("success-message");

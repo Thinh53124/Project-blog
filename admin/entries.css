@@ -326,3 +326,31 @@ body {
     transform: translateY(0) scale(1);
   }
 }
+
+/* POPUP BUTTON STYLE */
+.btn-ok {
+  background: #6366F1;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-ok:hover {
+  background: #4F46E5;
+}
+
+.btn-cancel {
+  background: #E5E7EB;
+  color: #374151;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background: #d1d5db;
+}

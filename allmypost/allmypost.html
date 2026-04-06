@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All My Post</title>
+
+    <link rel="stylesheet" href="allmypost.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <i class="fa-solid fa-microchip" id="icon"></i>
+        <h2>RIKKEI_EDU_BLOG</h2>
+      </div>
+
+      <div class="search-box">
+        <input type="search" placeholder="Search for articles" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <div class="auth" id="authBox">
+        <button onclick="location.href = '../register/register.html'">
+          Sign up
+        </button>
+        <button onclick="location.href = '../login/login.html'">Sign in</button>
+      </div>
+
+      <img src="../img/default.png" class="avatar" id="avatar" />
+    </header>
+
+    <hr />
+
+    <button class="add-new-article">
+      <a href="../new post/newpost.html" class="add-new-article">
+        <h1 class="add-new-article">ADD NEW ARTICLE</h1>
+      </a>
+    </button>
+
+    <main class="main">
+      <div class="posts-container"></div>
+    </main>
+
+    <!-- popup -->
+    <div class="user-popup" id="userPopup">
+      <div class="popup-header">
+        <img id="popupAvatar" />
+        <div>
+          <b id="popupName"></b><br />
+          <span id="popupEmail"></span>
+        </div>
+      </div>
+
+      <div class="popup-item" id="updateAvatar">Update profile picture</div>
+      <div class="popup-item" id="changePassword">Change password</div>
+      <div class="popup-item logout" id="logout">Log out</div>
+    </div>
+
+    <!-- modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+
+    <script src="allmypost.js"></script>
+  </body>
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <h2>MY BLOG</h2>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <b>Rareblocks</b>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum
+          aliquet accumsan porta lectus ridiculus in mattis.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <p>About</p>
+        <p>Features</p>
+        <p>Works</p>
+        <p>Career</p>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <p>Customer Support</p>
+        <p>Delivery Details</p>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <p>Free eBooks</p>
+        <p>Development Tutorial</p>
+        <p>How to - Blog</p>
+        <p>Youtube Playlist</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <button class="footer-bottom-btn">
+        <i class="fa-brands fa-twitter"></i>
+      </button>
+      <button class="footer-bottom-btn">
+        <i class="fa-brands fa-facebook-f"></i>
+      </button>
+      <button class="footer-bottom-btn">
+        <i class="fa-brands fa-instagram"></i>
+      </button>
+      <button class="footer-bottom-btn">
+        <i class="fa-brands fa-github"></i>
+      </button>
+    </div>
+  </footer>
+</html>
