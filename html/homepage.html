@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Homepage</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/homepage.css">
+
 </head>
 
 <body>
@@ -15,6 +17,32 @@
         <h3><img src="../image/icon-chip.png" alt=""> RIKKEI_EDU_BLOG</h3>
         <div class="search-box">
             <input type="text" placeholder=" Search for articles"> <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="user-menu-container">
+            <img src="../image/avt_default.png" alt="User Avatar" class="user-avatar" id="avatarBtn">
+
+            <div class="dropdown-menu" id="userDropdown">
+                <div class="dropdown-header">
+                    <div class="avatar-wrapper">
+                        <img src="../image/avt_default.png" alt="" id="dropdownAvt">
+                        <span class="status-dot"></span>
+                    </div>
+                    <div class="user-info">
+                        <p class="user-name" id="userName">Rikkei</p>
+                        <p class="user-email" id="userEmail">rikkei@gmail.com</p>
+                    </div>
+                </div>
+                <hr>
+                <ul class="menu-list">
+                    <li><a href="#"> View profile</a></li>
+                    <li><a href="#"> Update profile picture</a></li>
+                    <li><a href="#"> Change password</a></li>
+                </ul>
+                <hr>
+                <div class="logout-box">
+                    <a href="#" id="logoutBtn"> Log out</a>
+                </div>
+            </div>
         </div>
     </header>
     <hr>
@@ -27,7 +55,8 @@
                     <div class="text-blur">
                         <p class="date">Date: 2025-02-25</p>
                         <h4>A Productive Day at Work</h4>
-                        <p class="des">Today was a really productive day at work. I managed to finish a report ahead of schedule and
+                        <p class="des">Today was a really productive day at work. I managed to finish a report ahead of
+                            schedule and
                             received positive feedback from my manager.</p>
                         <p class="daily-journal">Daily Journal</p>
                     </div>
@@ -38,7 +67,8 @@
                         <div class="text-mini">
                             <p class="date">Date: 2025-02-24</p>
                             <h4>My First Job Interview Experience</h4>
-                            <p class="des">I had my first job interview today! I was nervous at first, but as the conversation went on, I
+                            <p class="des">I had my first job interview today! I was nervous at first, but as the
+                                conversation went on, I
                                 felt more confident. </p>
                             <p class="workandcareer">Work & Career</p>
                         </div>
@@ -48,7 +78,8 @@
                         <div class="text-mini">
                             <p class="date">Date: 2025-02-23</p>
                             <h4>Overthinking Everything</h4>
-                            <p class="des">Lately, I have been overthinking everything, from small decisions to bigger life choices.I know I
+                            <p class="des">Lately, I have been overthinking everything, from small decisions to bigger
+                                life choices.I know I
                                 should trust myself</p>
                             <p class="personal">Personal Thoughts</p>
                         </div>
@@ -72,7 +103,8 @@
                     <img src="../image/homepageimg1.jpg" alt="" class="img-mid">
                     <p class="date">Date: 2025-02-25</p>
                     <h4>A Productive Day at Work</h4>
-                    <p class="des">Today was a really productive day at work. I managed to finish a report ahead of schedule and
+                    <p class="des">Today was a really productive day at work. I managed to finish a report ahead of
+                        schedule and
                         received positive feedback from my manager.</p>
                     <p class="daily-journal">Daily Journal</p>
                 </div>
@@ -80,7 +112,8 @@
                     <img src="../image/homepageimg2.jpg" alt="" class="img-mid">
                     <p class="date">Date: 2025-02-24</p>
                     <h4>My First Job Interview Experience</h4>
-                    <p class="des">I had my first job interview today! I was nervous at first, but as the conversation went on, I
+                    <p class="des">I had my first job interview today! I was nervous at first, but as the conversation
+                        went on, I
                         felt more confident. </p>
                     <p class="workandcareer">Work & Career</p>
                 </div>
@@ -88,7 +121,8 @@
                     <img src="../image/homepageimg3.jpg" alt="" class="img-mid">
                     <p class="date">Date: 2025-02-23</p>
                     <h4>Overthinking Everything</h4>
-                    <p class="des">Lately, I have been overthinking everything, from small decisions to bigger life choices.I know I
+                    <p class="des">Lately, I have been overthinking everything, from small decisions to bigger life
+                        choices.I know I
                         should trust myself</p>
                     <p class="personal">Personal Thoughts</p>
                 </div>
@@ -105,7 +139,8 @@
                     <img src="../image/homepageimg5.jpg" alt="" class="img-mid">
                     <p class="date">Date: 2025-02-15</p>
                     <h4>Our top 10 Javascript frameworks to use</h4>
-                    <p class="des">JavaScript frameworks make development easy with extensive features and functionalities.</p>
+                    <p class="des">JavaScript frameworks make development easy with extensive features and
+                        functionalities.</p>
                     <p id="workandcareer-three">Work & Career</p>
                 </div>
                 <div class="card-mini-two">
@@ -116,7 +151,7 @@
                     <p id="emotion">Emotions & Feelings</p>
                 </div>
             </div>
-            
+
         </section>
         <hr id="hr">
         <section class="pages">
@@ -135,42 +170,44 @@
     </main>
 </body>
 <footer class="footer">
-        <div class="footer-top">
-            <div class="footer-logo">
-                <h2>MY BLOG</h2>
-            </div>
-            <div class="footer-col">
-                <h4>About</h4>
-                <b>Rareblocks</b>
-                <p>Lorem ipsum dolor sit amet...</p>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <p>About</p>
-                <p>Features</p>
-                <p>Works</p>
-                <p>Career</p>
-            </div>
-            <div class="footer-col">
-                <h4>Help</h4>
-                <p>Customer Support</p>
-                <p>Delivery Details</p>
-                <p>Terms & Conditions</p>
-                <p>Privacy Policy</p>
-            </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <p>Free eBooks</p>
-                <p>Development Tutorial</p>
-                <p>How to - Blog</p>
-                <p>Youtube Playlist</p>
-            </div>
+    <div class="footer-top">
+        <div class="footer-logo">
+            <h2>MY BLOG</h2>
         </div>
-        <div class="footer-bottom">
-            <button class="footer-bottom-btn"><i class="fa-brands fa-twitter"></i></button>
-            <button class="footer-bottom-btn"><i class="fa-brands fa-facebook-f"></i></button>
-            <button class="footer-bottom-btn"><i class="fa-brands fa-instagram"></i></button>
-            <button class="footer-bottom-btn"><i class="fa-brands fa-github"></i></button>
+        <div class="footer-col">
+            <h4>About</h4>
+            <b>Rareblocks</b>
+            <p>Lorem ipsum dolor sit amet...</p>
         </div>
-    </footer>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <p>About</p>
+            <p>Features</p>
+            <p>Works</p>
+            <p>Career</p>
+        </div>
+        <div class="footer-col">
+            <h4>Help</h4>
+            <p>Customer Support</p>
+            <p>Delivery Details</p>
+            <p>Terms & Conditions</p>
+            <p>Privacy Policy</p>
+        </div>
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <p>Free eBooks</p>
+            <p>Development Tutorial</p>
+            <p>How to - Blog</p>
+            <p>Youtube Playlist</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <button class="footer-bottom-btn"><i class="fa-brands fa-twitter"></i></button>
+        <button class="footer-bottom-btn"><i class="fa-brands fa-facebook-f"></i></button>
+        <button class="footer-bottom-btn"><i class="fa-brands fa-instagram"></i></button>
+        <button class="footer-bottom-btn"><i class="fa-brands fa-github"></i></button>
+    </div>
+</footer>
+<script src="../js/homepage.js"></script>
+
 </html>

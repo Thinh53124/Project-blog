@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/admin_entries.css">
-    <title>Document</title>
+    <title>Admin Entries</title>
 </head>
 
 <body>
@@ -19,15 +19,21 @@
             </div>
             <i class="fa-regular fa-bell"></i>
             <div class="avt">
-                <img src="../image/avt_admin.png" alt="">
-            </div>
+                <img src="../image/avt_admin.png" alt="" id="avatar-img">
+                <div class="avatar-dropdown" id="avatar-dropdown">
+                    <a href="#"><i class="fa-solid fa-user-pen"></i> Chỉnh sửa hồ sơ</a>
+                    <!-- <a href="#" id="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a> -->
+                </div>
+            </div> 
         </div>
     </header>
     <main class="container">
         <aside class="interact">
-            <div class="menu-item"><a href="#"><img src="../image/Users_Group.png" alt=""> Manage Users</a></div>
+            <div class="menu-item"><a href="../html/admin_customer.html"><img src="../image/Users_Group.png" alt="">
+                    Manage Users</a></div>
             <div class="menu-item active"><a href="#"><img src="../image/Book.svg" alt=""> Manage Entries</a></div>
-            <div class="menu-item"><a href="#"><img src="../image/Book_Open.svg" alt=""> Manage Article</a></div>
+            <div class="menu-item"><a href="../html/admin_artical.html"><img src="../image/Book_Open.svg" alt=""> Manage
+                    Article</a></div>
             <div class="menu-item logout"><a href="../html/login.html"><img src="../image/Log_Out.svg" alt=""> Log
                     out</a></div>
         </aside>
@@ -62,6 +68,7 @@
             </div>
         </section>
     </main>
+    <script src="../js/admin_entries.js"></script>
 </body>
 
 </html>

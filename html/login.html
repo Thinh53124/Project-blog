@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Đăng nhập</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../css/login.css">
+    
 </head>
 
 <body>
@@ -20,17 +21,17 @@
     <form action="" class="form-login">
         <b>Or</b>
         <div class="email">
-            <input type="email" placeholder=" Enter a valid email address">
+            <input type="email" id="loginEmail" placeholder=" Enter a valid email address" autocomplete="email">
             <p>Email address</p>
         </div>
         <div class="pass">
-            <input type="text" placeholder=" Enter Password">
+            <input type="password" id="loginPassword" placeholder=" Enter Password" autocomplete="new-password">
             <p>Password</p>
         </div>
     </form>
     <section>
         <button>Login</button>
-        <span> 
+        <span>
             <p>Don't have an account?</p> <a href="./register.html">Register</a>
         </span>
     </section>
@@ -43,6 +44,7 @@
         <button><i class="fa-brands fa-google"></i></button>
         <button><i class="fa-brands fa-linkedin-in"></i></button>
     </div>
+    <script src="../js/login.js"></script>
 </footer>
 
 </html>

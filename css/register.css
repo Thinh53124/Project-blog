@@ -97,3 +97,30 @@ form a {
 .name input{
     width: 160px;
 }
+.error {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}
+
+input {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+span {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}

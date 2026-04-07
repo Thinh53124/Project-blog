@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Admin Manage Blog</title>
+    <link rel="stylesheet" href="../css/admin_artical.css" />
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <div></div>
+            <div class="icons">
+                <div class="icon-wrapper">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span class="badge">2</span>
+                </div>
+                <i class="fa-regular fa-bell"></i>
+                <img src="../image/avt_admin.png" class="avatar" />
+            </div>
+        </div>
+    </header>
+    <hr />
+    <div class="app">
+        <aside class="sidebar">
+            <div class="menu-item"><a href="./admin_customer.html"><span class="icon-box"><img
+                            src="../image/Users_Group.png" /></span> Manage Users</a></div>
+            <div class="menu-item"><a href="./admin_entries.html"><span class="icon-box"><img
+                            src="../image/Book.svg" /></span> Manage Entries</a></div>
+            <div class="menu-item active"><a href="./admin_artical.html"><span class="icon-box"><img
+                            src="../image/Book_Open.svg" /></span> Manage Article</a></div>
+            <div class="menu-item logout"><a href="./login.html"><span class="icon-box"><img
+                            src="../image/Log_Out.svg" /></span> Log out</a></div>
+        </aside>
+
+        <div class="main">
+            <div class="post-header">
+                <button class="btn-add" id="openAddBtn">Thêm mới bài viết</button>
+                <h2>Quản lý bài viết</h2>
+            </div>
+
+            <div class="post-table">
+                <div class="post-head">
+                    <div>Ảnh</div>
+                    <div>Tiêu đề</div>
+                    <div>Chủ đề</div>
+                    <div>Nội dung</div>
+                    <div>Trạng thái</div>
+                    <div>Sửa trạng thái</div>
+                    <div>Hành động</div>
+                </div>
+                <div id="postList"></div>
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn" id="prevBtn"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+                <div class="pages" id="paginationNumbers"></div>
+                <button class="page-btn" id="nextBtn">Next <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="addModal" class="modal-overlay">
+        <div class="modal-content form-wrapper-popup">
+            <button class="popup-close-btn" onclick="closeAddModal()">&times;</button>
+
+            <h2>📝 Add New Article</h2>
+
+            <div class="field-group">
+                <label>Title:</label>
+                <input type="text" id="addPostTitle" placeholder="Enter title...">
+            </div>
+
+            <div class="field-group">
+                <label>Article Categories:</label>
+                <select id="addPostCategory"></select>
+            </div>
+
+            <div class="field-group">
+                <label>Mood:</label>
+                <select id="addPostMood">
+                    <option value="Happy">😃 Happy</option>
+                    <option value="Sad">😢 Sad</option>
+                    <option value="Angry">😠 Angry</option>
+                    <option value="Tired">😴 Tired</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <label>Content:</label>
+                <textarea id="addPostContent" placeholder="Write content..."></textarea>
+            </div>
+
+            <div class="status-row">
+                <span>Status</span>
+                <label><input type="radio" name="addStatus" value="public" checked> public</label>
+                <label><input type="radio" name="addStatus" value="private"> private</label>
+            </div>
+
+            <label>Article Image:</label>
+            <div class="upload-box" onclick="document.getElementById('addFileInput').click()">
+                <img src="../image/Group.png" id="addPreviewImg" alt="Preview">
+                <p id="uploadText">Browse and chose the files you want to upload from your computer</p>
+                <input type="file" id="addFileInput" hidden accept="image/*">
+            </div>
+
+            <button class="btn-add-confirm" id="saveNewBtn">Add</button>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h3>📝 Chỉnh sửa bài viết</h3>
+            <hr><br>
+            <input type="hidden" id="editId">
+            <div class="form-group">
+                <label>Tiêu đề:</label>
+                <input type="text" id="editTitle">
+            </div>
+            <div class="form-group">
+                <label>Chủ đề:</label>
+                <select id="editCategory"></select>
+            </div>
+            <div class="form-group">
+                <label>Nội dung:</label>
+                <textarea id="editContent" rows="4"></textarea>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="closeEditModal()">Hủy bỏ</button>
+                <button class="btn-save" onclick="saveEdit()">Lưu thay đổi</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content" style="text-align: center;">
+            <i class="fa-solid fa-circle-exclamation" style="font-size: 50px; color: #F87171; margin-bottom: 15px;"></i>
+            <h3>Bạn có chắc chắn?</h3>
+            <p>Bài viết sẽ bị xóa vĩnh viễn.</p>
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
+                <button onclick="closeDeleteModal()"
+                    style="padding: 10px 20px; background: #eee; border:none; border-radius: 6px; cursor:pointer;">Hủy</button>
+                <button id="confirmDeleteBtn"
+                    style="padding: 10px 20px; background: #F87171; color: white; border:none; border-radius: 6px; cursor:pointer;">Xóa
+                    ngay</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/admin_artical.js"></script>
+</body>
+
+</html>

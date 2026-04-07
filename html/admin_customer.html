@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>User Management</title>
-    <link rel="stylesheet" href="../css/admin_customer.css"> 
+    <link rel="stylesheet" href="../css/admin_customer.css">
 </head>
+
 <body>
     <header>
         <div class="header-right">
@@ -17,7 +19,14 @@
             </div>
             <i class="fa-regular fa-bell"></i>
             <div class="avt">
-                <img src="../image/avt_admin.png" alt="">
+                <div class="avt" id="avatar-container">
+                    <img src="../image/avt_admin.png" alt="" id="avatar-img">
+                    <div class="avatar-dropdown" id="avatar-dropdown">
+                        <a href="#"><i class="fa-solid fa-user-pen"></i> Chỉnh sửa hồ sơ</a>
+                        <a href="#" id="logout-link" style="color: #d92d20;"><i
+                                class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -25,9 +34,12 @@
     <main class="container">
         <aside class="interact">
             <div class="menu-item active"><a href="#"><img src="../image/Users_Group.png" alt=""> Manage Users</a></div>
-            <div class="menu-item"><a href="#"><img src="../image/Book.svg" alt=""> Manage Entries</a></div>
-            <div class="menu-item"><a href="#"><img src="../image/Book_Open.svg" alt=""> Manage Article</a></div>
-            <div class="menu-item logout"><a href="../html/login.html"><img src="../image/Log_Out.svg" alt=""> Log out</a></div>
+            <div class="menu-item"><a href="../html/admin_entries.html"><img src="../image/Book.svg" alt=""> Manage
+                    Entries</a></div>
+            <div class="menu-item"><a href="../html/admin_artical.html"><img src="../image/Book_Open.svg" alt=""> Manage
+                    Article</a></div>
+            <div class="menu-item logout"><a href="../html/login.html"><img src="../image/Log_Out.svg" alt=""> Log
+                    out</a></div>
         </aside>
 
         <section class="content">
@@ -56,7 +68,7 @@
                             <td>
                                 <div class="user-info">
                                     <img src="../image/olivia.png" alt="avatar">
-                                    <div>
+                                    <div class="fullname">
                                         <div class="name">Olivia Rhye</div>
                                         <div class="username">@olivia</div>
                                     </div>
@@ -225,7 +237,6 @@
                     </tbody>
                 </table>
             </div>
-
             <footer class="pages">
                 <button class="btn-page"><i class="fa-solid fa-arrow-left"></i> Previous</button>
                 <div class="number">
@@ -241,5 +252,7 @@
             </footer>
         </section>
     </main>
+    <script src="../js/admin_customer.js"></script>
 </body>
+
 </html>
