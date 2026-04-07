@@ -3,119 +3,241 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All My Post</title>
-
-    <link rel="stylesheet" href="allmypost.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kaushan+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="./allmypost.css" />
   </head>
+
   <body>
     <header class="header">
       <div class="logo">
-        <i class="fa-solid fa-microchip" id="icon"></i>
+        <img src="../home/Chip.png" alt="" />
         <h2>RIKKEI_EDU_BLOG</h2>
       </div>
-
       <div class="search-box">
-        <input type="search" placeholder="Search for articles" />
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search for articles"
+        />
         <i class="fa-solid fa-magnifying-glass"></i>
+
+        <!-- FILTER CATEGORY -->
+        <select id="filter-category">
+          <option value="">All</option>
+        </select>
+      </div>
+      <div class="auth" id="auth-box">
+        <a href="../register/register.html"
+          ><button class="btn">Sign up</button></a
+        >
+        <a href="../login/login.html"><button class="btn">Sign in</button></a>
       </div>
 
-      <div class="auth" id="authBox">
-        <button onclick="location.href = '../register/register.html'">
-          Sign up
-        </button>
-        <button onclick="location.href = '../login/login.html'">Sign in</button>
-      </div>
+      <div class="user-box" id="user-box">
+        <img src="../Dropdown.png" class="avatar" id="avatar" />
 
-      <img src="../img/default.png" class="avatar" id="avatar" />
-    </header>
+        <div class="user-popup" id="user-popup">
+          <div class="user-info-top">
+            <img src="../Dropdown.png" class="avatar-small" />
+            <div>
+              <p id="user-name"></p>
+              <p id="user-email" class="email"></p>
+            </div>
+          </div>
 
-    <hr />
+          <hr />
 
-    <button class="add-new-article">
-      <a href="../new post/newpost.html" class="add-new-article">
-        <h1 class="add-new-article">ADD NEW ARTICLE</h1>
-      </a>
-    </button>
+          <p class="menu-item" onclick="openProfile()">View profile</p>
+          <p class="menu-item" onclick="openAvatar()">Update profile picture</p>
+          <p class="menu-item" onclick="openPassword()">Change password</p>
 
-    <main class="main">
-      <div class="posts-container"></div>
-    </main>
+          <hr />
 
-    <!-- popup -->
-    <div class="user-popup" id="userPopup">
-      <div class="popup-header">
-        <img id="popupAvatar" />
-        <div>
-          <b id="popupName"></b><br />
-          <span id="popupEmail"></span>
+          <p class="menu-item logout" onclick="logout()">Log out</p>
         </div>
       </div>
+    </header>
+    <hr />
 
-      <div class="popup-item" id="updateAvatar">Update profile picture</div>
-      <div class="popup-item" id="changePassword">Change password</div>
-      <div class="popup-item logout" id="logout">Log out</div>
+    <main class="main">
+      <button class="add-new-article">
+        <h1>ADD NEW ARTICLE</h1>
+      </button>
+      <div class="posts-container" id="tbody"></div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button>← Previous</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <span>...</span>
+        <button>10</button>
+        <button>Next →</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <h2>MY BLOG</h2>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <b>Rareblocks</b>
+          <p>Lorem ipsum dolor sit amet...</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <p>About</p>
+          <p>Features</p>
+          <p>Works</p>
+          <p>Career</p>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <p>Customer Support</p>
+          <p>Delivery Details</p>
+          <p>Terms & Conditions</p>
+          <p>Privacy Policy</p>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <p>Free eBooks</p>
+          <p>Development Tutorial</p>
+          <p>How to - Blog</p>
+          <p>Youtube Playlist</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <form class="form">
+          <div class="form-header">
+            <h1 style="font-size: 24px; line-height: 100%; font-weight: 700">
+              📝 Add New Article
+            </h1>
+            <a href="./allmypost.html"
+              ><img src="../new post/x-circle.png" class="close-btn"
+            /></a>
+          </div>
+
+          <br /><br /><br />
+
+          <!-- Title -->
+          <label for="title-input">Title:</label><br /><br />
+          <input
+            type="text"
+            class="title-input"
+            placeholder="Enter your title..."
+            id="title-input"
+          /><br /><br />
+          <span class="error error-title"></span><br />
+          <label for="category-input">Article Categories:</label><br /><br />
+          <select id="category-input"></select
+          ><br /><br />
+
+          <label for="mood-input">Mood:</label><br /><br />
+
+          <select id="mood-input">
+            <option id="mood-option">😃Happy</option>
+            <option id="mood-option">😢 Sad</option>
+            <option id="mood-option">😠 Angry</option>
+            <option id="mood-option">😴 Tired</option>
+            <option id="mood-option">😎 Confident</option></select
+          ><br /><br />
+
+          <label for="textarea-input">Content:</label><br />
+          <textarea rows="8" id="textarea-input"></textarea>
+          <div class="form-status">
+            <span>Status</span>
+            <label
+              ><input
+                type="radio"
+                id="status-input"
+                name="status"
+                value="Public"
+              />
+              &nbsp;Public</label
+            >
+            &nbsp;
+            <label
+              ><input
+                type="radio"
+                id="status-input"
+                name="status"
+                value="Private"
+              />
+              &nbsp;Private</label
+            >
+          </div>
+          <p class="error error-status"></p>
+          <br />
+
+          <div class="input-file">
+            <input type="file" id="file-input" accept="image/*" />
+            <img src="../img/content.png" alt="" /><br />
+            <label for="file-input"
+              >Browse and chose the files you want to upload from your
+              computer</label
+            >
+          </div>
+
+          <button onclick="addArticle(event)">Add</button>
+        </form>
+      </div>
     </div>
 
-    <!-- modal -->
-    <div id="modal" class="modal">
-      <div class="modal-content" id="modalContent"></div>
+    <!-- PROFILE -->
+    <div class="modal" id="profile-modal">
+      <div class="modal-content">
+        <h2>👤 User Profile</h2>
+        <p><b>Name:</b> <span id="profile-name"></span></p>
+        <p><b>Email:</b> <span id="profile-email"></span></p>
+        <button onclick="closeProfile()">Close</button>
+      </div>
     </div>
 
-    <script src="allmypost.js"></script>
+    <!-- PASSWORD -->
+    <div class="modal" id="password-modal">
+      <div class="modal-content">
+        <h2>🔒 Change Password</h2>
+        <input
+          type="password"
+          id="old-pass"
+          placeholder="Old password"
+        /><br /><br />
+        <input
+          type="password"
+          id="new-pass"
+          placeholder="New password"
+        /><br /><br />
+        <button onclick="changePassword()">Save</button>
+        <button onclick="closePassword()">Cancel</button>
+      </div>
+    </div>
+
+    <!-- AVATAR -->
+    <div class="modal" id="avatar-modal">
+      <div class="modal-content">
+        <h2>Update Avatar</h2>
+        <input type="file" id="avatar-input" accept="image/*" /><br /><br />
+        <button onclick="updateAvatar()">Upload</button>
+        <button onclick="closeAvatar()">Cancel</button>
+      </div>
+    </div>
+
+    <script src="./allmypost.js"></script>
   </body>
-  <footer class="footer">
-    <div class="footer-top">
-      <div class="footer-logo">
-        <h2>MY BLOG</h2>
-      </div>
-      <div class="footer-col">
-        <h4>About</h4>
-        <b>Rareblocks</b>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum
-          aliquet accumsan porta lectus ridiculus in mattis.
-        </p>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <p>About</p>
-        <p>Features</p>
-        <p>Works</p>
-        <p>Career</p>
-      </div>
-      <div class="footer-col">
-        <h4>Help</h4>
-        <p>Customer Support</p>
-        <p>Delivery Details</p>
-        <p>Terms & Conditions</p>
-        <p>Privacy Policy</p>
-      </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <p>Free eBooks</p>
-        <p>Development Tutorial</p>
-        <p>How to - Blog</p>
-        <p>Youtube Playlist</p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <button class="footer-bottom-btn">
-        <i class="fa-brands fa-twitter"></i>
-      </button>
-      <button class="footer-bottom-btn">
-        <i class="fa-brands fa-facebook-f"></i>
-      </button>
-      <button class="footer-bottom-btn">
-        <i class="fa-brands fa-instagram"></i>
-      </button>
-      <button class="footer-bottom-btn">
-        <i class="fa-brands fa-github"></i>
-      </button>
-    </div>
-  </footer>
 </html>
