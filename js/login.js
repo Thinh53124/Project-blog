@@ -112,7 +112,7 @@ passwordInput.addEventListener('input', () => clearInputError(passwordInput));
 
 // Hỗ trợ nhấn Enter
 window.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') handleLogin();
+    if (e.key === 'Enter') handleLogin(); 
 });
 document.querySelector('section button').onclick = function() {
     const email = document.getElementById('loginEmail').value.trim();

@@ -18,6 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function init() {
+        if (!currentUser) {
+            window.location.href = 'login.html';
+            return;
+        }
         initHeader();
         loadCategoriesData();
         renderPosts();
@@ -25,14 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initHeader() {
         if (currentUser) {
-            authSection.innerHTML = `<div class="user-avatar-container" onclick="toggleDropdown(event)">
-                <img src="${currentUser.avatar || '../image/avt_default.png'}" class="nav-avatar">
-            </div>`;
+            authSection.innerHTML = `
+                <div class="user-avatar-container" onclick="toggleDropdown(event)">
+                    <img src="${currentUser.avatar || '../image/avt_default.png'}" class="nav-avatar">
+                </div>`;
             document.getElementById('dropdownAvatar').src = currentUser.avatar || '../image/avt_default.png';
             document.getElementById('dropdownName').innerText = currentUser.username;
             document.getElementById('dropdownEmail').innerText = currentUser.email;
-        } else {
-            authSection.innerHTML = `<div class="signinup"><button class="btn-auth" onclick="location.href='login.html'">Sign In</button></div>`;
         }
     }
 
@@ -44,9 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('postCategory').innerHTML = cats.map(c => `<option value="${c.name}">${c.name}</option>`).join('');
     }
 
-    // HIỂN THỊ DANH SÁCH BÀI VIẾT
+    // 1. HIỂN THỊ DANH SÁCH BÀI VIẾT NGOÀI TRANG CHỦ MYPOST
     function renderPosts() {
-        if (!currentUser) return;
         const allPosts = JSON.parse(localStorage.getItem('user_posts')) || [];
         const userId = currentUser.id || currentUser.email;
         const searchTerm = searchInput.value.toLowerCase();
@@ -61,11 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
         filtered.sort((a, b) => b.id - a.id);
         postContainer.innerHTML = '';
 
-        filtered.slice(0, 6).forEach(post => {
+        filtered.forEach(post => {
             const card = document.createElement('div');
             card.className = 'card-mini';
             
-            // Logic: Click vào card để xem chi tiết (trừ nút Edit)
+            // Click vào bất kỳ đâu trên card để xem chi tiết (trừ nút Edit)
             card.onclick = (e) => {
                 if (!e.target.classList.contains('btn-edit-trigger')) {
                     openDetailModal(post.id);
@@ -78,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="date">Date: ${post.date} | Mood: ${moodIcons[post.mood] || '😶'}</div>
                     <h4>${post.title}</h4>
                     <p>${post.content.substring(0, 80)}...</p>
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px;">
                         <span class="category-tag">${post.category}</span>
                         <button class="btn-edit-trigger" onclick="openEditModal(${post.id})">Edit your post</button>
                     </div>
@@ -88,29 +90,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // XEM CHI TIẾT (DETAIL POPUP)
+    // 2. XỬ LÝ MODAL CHI TIẾT (CÓ COMMENT FIX CỨNG)
     window.openDetailModal = (id) => {
         const allPosts = JSON.parse(localStorage.getItem('user_posts')) || [];
         const post = allPosts.find(p => p.id === id);
 
         if (post) {
+            // Đổ dữ liệu bài viết vào Modal
             document.getElementById('detailTitle').innerText = post.title;
             document.getElementById('detailContent').innerText = post.content;
-            document.getElementById('detailAvatar').src = currentUser.avatar || '../image/avt_default.png';
             
-            // Lấy lượt like đã lưu hoặc random nếu chưa có
-            const displayLikes = post.likes || Math.floor(Math.random() * 50) + 1;
-            document.getElementById('detailLikes').innerHTML = `${displayLikes} Like <img src="../image/like.png">`;
+            // Cập nhật Avatar người đăng
+            const userAvatar = currentUser.avatar || '../image/avt_default.png';
+            document.getElementById('detailAvatar').src = userAvatar;
             
-            document.getElementById('detailModal').style.display = 'flex';
+            // Hiển thị Modal
+            const modal = document.getElementById('detailModal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Khóa cuộn trang
         }
     };
 
     window.closeDetailModal = () => {
         document.getElementById('detailModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
     };
 
-    // LƯU BÀI VIẾT (ADD/EDIT)
+    // 3. LƯU BÀI VIẾT (ADD / EDIT)
     window.handleSave = () => {
         const title = document.getElementById('postTitle').value.trim();
         const content = document.getElementById('postContent').value.trim();
@@ -125,13 +131,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isEditing) {
             const id = parseInt(document.getElementById('targetPostId').value);
-            allPosts = allPosts.map(p => p.id === id ? {...p, title, content, category, mood, status, img: tempImgBase64} : p);
+            allPosts = allPosts.map(p => p.id === id ? {
+                ...p, title, content, category, mood, status, img: tempImgBase64 || p.img
+            } : p);
         } else {
             allPosts.unshift({
-                id: Date.now(), userId, title, content, category, mood, status,
+                id: Date.now(), 
+                userId, 
+                title, 
+                content, 
+                category, 
+                mood, 
+                status,
                 img: tempImgBase64 || "../image/Group.png",
                 date: new Date().toISOString().split('T')[0],
-                likes: Math.floor(Math.random() * 30) + 1 // Lưu sẵn like khi tạo bài
+                likes: 15 // Fix cứng số like ban đầu cho đẹp giao diện
             });
         }
 
@@ -140,9 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
         renderPosts();
     };
 
-    // CÁC HÀM TIỆN ÍCH KHÁC
+    // 4. CÁC HÀM ĐIỀU KHIỂN MODAL ADD/EDIT
     window.openAddModal = () => {
-        if (!currentUser) return (location.href = 'login.html');
         isEditing = false;
         resetModal();
         document.getElementById('modalTitle').innerText = "📝 Add New Article";
@@ -169,12 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    function showError(message) {
-        errorText.innerText = message;
-        errorMsg.style.display = 'block';
-        setTimeout(() => errorMsg.style.display = 'none', 4000);
-    }
-
+    // 5. CÁC HÀM TIỆN ÍCH
     function resetModal() {
         document.getElementById('postTitle').value = "";
         document.getElementById('postContent').value = "";
@@ -182,14 +190,28 @@ document.addEventListener('DOMContentLoaded', () => {
         tempImgBase64 = "";
     }
 
-    // Đăng xuất và Dropdown
-    window.logout = () => { localStorage.removeItem('currentUser'); location.reload(); };
-    window.toggleDropdown = (e) => { e.stopPropagation(); const d = document.getElementById('userDropdown'); d.style.display = d.style.display === 'block' ? 'none' : 'block'; };
-    window.closeModal = () => { document.getElementById('articleModal').style.display = 'none'; };
-    searchInput.addEventListener('input', renderPosts);
-    categoryFilter.addEventListener('change', renderPosts);
-    
-    // Xử lý ảnh
+    function showError(message) {
+        errorText.innerText = message;
+        errorMsg.style.display = 'block';
+        setTimeout(() => errorMsg.style.display = 'none', 3000);
+    }
+
+    window.logout = () => {
+        localStorage.removeItem('currentUser');
+        window.location.href = 'login.html';
+    };
+
+    window.toggleDropdown = (e) => {
+        e.stopPropagation();
+        const d = document.getElementById('userDropdown');
+        d.style.display = d.style.display === 'block' ? 'none' : 'block';
+    };
+
+    window.closeModal = () => {
+        document.getElementById('articleModal').style.display = 'none';
+    };
+
+    // Xử lý Upload Ảnh
     document.getElementById('fileInput').onchange = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -202,6 +224,14 @@ document.addEventListener('DOMContentLoaded', () => {
             reader.readAsDataURL(file);
         }
     };
+
+    // Đóng dropdown khi click ra ngoài
+    window.onclick = () => {
+        document.getElementById('userDropdown').style.display = 'none';
+    };
+
+    searchInput.addEventListener('input', renderPosts);
+    categoryFilter.addEventListener('change', renderPosts);
 
     init();
 });

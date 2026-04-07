@@ -1,4 +1,4 @@
-// --- DOM Elements ---
+
 const form = document.querySelector('.register form');
 const firstNameInput = document.querySelector('.firstname input');
 const lastNameInput = document.querySelector('.lastname input');
@@ -16,7 +16,7 @@ confirmPasswordInput.name = 'confirmPassword';
 
 // --- Các hàm kiểm tra (Validation) ---
 function validateName(value, label) {
-    const nameRegex = /^[a-zA-ZÀ-ỹ\s]+$/; // Chỉ cho phép chữ cái và khoảng trắng
+    const nameRegex = /^[a-zA-ZÀ-ỹ\s]+$/; //chữ cái và khoảng trắng
     if (!value.trim()) return `Vui lòng nhập ${label}`;
     if (value.trim().length < 2) return `${label} phải có ít nhất 2 ký tự`;
     if (!nameRegex.test(value.trim())) return `${label} không được chứa ký tự đặc biệt hoặc số`;
@@ -54,7 +54,7 @@ function clearError(input) {
     input.style.borderColor = '';
 }
 
-// --- Xử lý sự kiện validate khi blur ---
+// validate khi blur 
 function validateField(input) {
     let error = '';
     switch(input.name) {
@@ -74,7 +74,7 @@ function validateField(input) {
     input.addEventListener('input', () => clearError(input));
 });
 
-// --- Xử lý Đăng ký ---
+// Đăng ký 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -99,7 +99,7 @@ form.addEventListener('submit', function(e) {
         email: emailInput.value.trim(),
         password: passwordInput.value,
         status: "hoạt động",
-        avatar: "../image/avt-user.jpg" // Ảnh mặc định theo yêu cầu
+        avatar: "../image/avt-user.jpg" 
     };
     
     users.push(newUser);

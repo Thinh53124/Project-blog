@@ -100,22 +100,56 @@
     </div>
 
     <div id="detailModal" class="modal-overlay" style="display: none;">
-        <div class="detail-modal-wrapper">
-            <div class="detail-header-row">
-                <img src="../image/Back.png" alt="Back" id="backDetail" onclick="closeDetailModal()">
-                <img src="../image/avt_default.png" class="avatar-detail" id="detailAvatar">
-                <span style="font-weight: 600; color: #667085;">Post Detail</span>
+    <div class="detail-modal-wrapper">
+        <div class="detail-nav">
+            <button class="btn-back-detail" onclick="closeDetailModal()">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+        </div>
+
+        <div class="detail-main-content">
+            <div class="detail-user-info">
+                <img src="../image/avt_default.png" id="detailAvatar" class="avatar-main">
+                <h2 id="detailTitle">A Productive Day at Work</h2>
+            </div>
+            <p class="detail-text" id="detailContent">
+                Today was a really productive day at work...
+            </p>
+            <div class="detail-stats">
+                <span>15 Like <i class="fa-regular fa-thumbs-up"></i></span>
+                <span>6 Replies <i class="fa-regular fa-comment"></i></span>
+            </div>
+        </div>
+
+        <div class="view-comments-link">
+            <span>View all 12 comments <i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+
+        <div class="comment-list">
+            <div class="comment-item">
+                <img src="../image/avt2-cmt.jpg" class="avatar-cmt">
+                <div class="comment-box">
+                    <p class="comment-text">very good!</p>
+                    <div class="comment-footer">
+                        <span>15 Like <i class="fa-regular fa-thumbs-up"></i></span>
+                        <span>6 Replies <i class="fa-regular fa-comment"></i></span>
+                    </div>
+                </div>
             </div>
 
-            <div class="post-detail-box">
-                <h2 id="detailTitle">Title</h2>
-                <p class="post-content-detail" id="detailContent">Content</p>
-                <div class="post-actions-detail">
-                    <span id="detailLikes">0 Like <img src="../image/like.png" style="width:18px; margin-left:5px;"></span>
+            <div class="comment-item">
+                <img src="../image/avt3-cmt.jpg" class="avatar-cmt">
+                <div class="comment-box">
+                    <p class="comment-text">hello rikkei!</p>
+                    <div class="comment-footer">
+                        <span>15 Like <i class="fa-regular fa-thumbs-up"></i></span>
+                        <span>6 Replies <i class="fa-regular fa-comment"></i></span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <script src="../js/mypost.js"></script>
 </body>
