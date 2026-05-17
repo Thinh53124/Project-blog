@@ -102,7 +102,6 @@ function renderFilterCategories() {
       .join("");
 }
 
-// INIT
 renderCategories();
 renderFilterCategories();
 renderPost();
@@ -260,7 +259,7 @@ function addArticle(e) {
         file: img,
         date,
         userEmail: currentUser.email,
-        likes: Math.floor(Math.random() * 50) + 1, 
+        likes: Math.floor(Math.random() * 50) + 1,
       };
       posts.push(post);
 
@@ -339,34 +338,34 @@ document.body.appendChild(detailsModal);
 
 // Open details popup
 function openDetails(postId) {
-  const post = posts.find(p => p.id === postId)
-  if (!post) return
+  const post = posts.find((p) => p.id === postId);
+  if (!post) return;
 
-  const users = JSON.parse(localStorage.getItem("users")) || []
-  const author = users.find(u => u.email === post.userEmail) || currentUser
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const author = users.find((u) => u.email === post.userEmail) || currentUser;
 
-  const avatarEl = detailsModal.querySelector(".details-avatar")
-  avatarEl.src = author?.avatar || "../img/default.jpg"
+  const avatarEl = detailsModal.querySelector(".details-avatar");
+  avatarEl.src = author?.avatar || "../img/default.jpg";
 
-  detailsModal.querySelector(".details-title").textContent = post.title
-  detailsModal.querySelector(".details-content").textContent = post.content
+  detailsModal.querySelector(".details-title").textContent = post.title;
+  detailsModal.querySelector(".details-content").textContent = post.content;
 
   // Hiển thị số like từ post, replies mặc định 0
   detailsModal.querySelector(".details-actions").innerHTML = `
     <span>${post.likes} Like</span> · 
     <span>0 Replies</span>
-  `
+  `;
 
-  detailsModal.style.display = "flex"
-  detailsModal.style.justifyContent = "center"
-  detailsModal.style.alignItems = "center"
-  detailsModal.style.position = "fixed"
-  detailsModal.style.top = 0
-  detailsModal.style.left = 0
-  detailsModal.style.width = "100%"
-  detailsModal.style.height = "100%"
-  detailsModal.style.background = "rgba(0,0,0,0.3)"
-  detailsModal.style.zIndex = 100
+  detailsModal.style.display = "flex";
+  detailsModal.style.justifyContent = "center";
+  detailsModal.style.alignItems = "center";
+  detailsModal.style.position = "fixed";
+  detailsModal.style.top = 0;
+  detailsModal.style.left = 0;
+  detailsModal.style.width = "100%";
+  detailsModal.style.height = "100%";
+  detailsModal.style.background = "rgba(0,0,0,0.3)";
+  detailsModal.style.zIndex = 100;
 }
 
 // Close details modal
@@ -382,7 +381,6 @@ window.addEventListener("click", (e) => {
 function attachPostClick() {
   document.querySelectorAll(".post-card").forEach((card) => {
     card.onclick = (e) => {
-      // tránh click vào nút Edit mở form edit
       if (e.target.tagName.toLowerCase() === "a") return;
       const title = card.querySelector("h3").textContent;
       const post = posts.find((p) => p.title === title);
